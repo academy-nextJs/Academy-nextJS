@@ -3,10 +3,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-  <div>
-    <Hero />
-    
-    
-  </div>
+    <div className="text-gray border-2 bg-base border-gray">
+      HomePage
+      <Hero />
+    </div>
   );
 }
