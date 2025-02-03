@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="dark">
+      <body className="dark font-customFont">
       <Layout>
           <ReactQueryProvider>{children}</ReactQueryProvider>    
       </Layout>

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "peyda";
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/src/assets/fonts/Peyda-Medium.ttf") format("ttf");
+}
+
 @layer base {
   :root {
     --color-main: #232323;
@@ -14,6 +23,7 @@
     --color-red: #ff5555;
     --color-border-gray: #565656;
   }
+
   .dark {
     --color-main: #232323;
     --color-green: #8cff45;
@@ -25,4 +35,5 @@
     --color-red: #ff5555;
     --color-border-gray: #565656;
   }
+  
 }

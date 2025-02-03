@@ -29,8 +29,10 @@ export default {
         gray: "var(--color-border-gray)",
         garyInGreen: "var(--color-gray)",
       },
-
     },
+    fontFamily : {
+      customFont : ["peyda"]
+    }
   },
   darkMode: "class",
   plugins: [heroui()],
