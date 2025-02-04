@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@font-face {
-  font-family: "peyda";
-  font-style: normal;
-  font-weight: 200 700;
-  font-display: swap;
-  src: url("/src/assets/fonts/Peyda-Medium.ttf") format("ttf");
-}
-
 @layer base {
   :root {
     --color-main: #232323;
@@ -38,15 +29,16 @@
 
   /* custom tags */
   h2 {
-    @apply lg:text-[32px] sm:text-2xl text-xl
+    @apply lg:text-[32px] sm:text-2xl text-xl 
   }
 
   h3 {
-    @apply lg:text-xl sm:text-lg text-base
+    @apply lg:text-xl sm:text-lg text-base 
   }
 
   p {
-    @apply lg:text-base text-sm
+    @apply lg:text-base text-sm 
   }
+
 
 }
