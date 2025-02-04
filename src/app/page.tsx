@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <div className="text-gray border-2 bg-base border-gray space-y-8">
      <p> HomePage </p> 
-     <Button color="green" size="xl" width="850px"  > Click me </Button>
       <Hero />
     </div>
   );
