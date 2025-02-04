@@ -25,4 +25,50 @@
     --color-red: #ff5555;
     --color-border-gray: #565656;
   }
+
+  @font-face {
+    font-family: Peyda Thin;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Thin.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda ExtraLight;
+    src: local("Peyda"), url("../assets/Fonts/peydaWeb-extralight.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda Light;
+    src: local("Peyda"), url("../assets/Fonts/peydaWeb-light.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda Regular;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Regular.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda Medium;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Medium.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda DemiBold;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-SemiBold.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda Bold;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Bold.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda ExtraBold;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-ExtraBold.woff2"),
+      format("woff2");
+  }
+  @font-face {
+    font-family: Peyda black;
+    src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Black.woff2"),
+      format("woff2");
+  }
 }
