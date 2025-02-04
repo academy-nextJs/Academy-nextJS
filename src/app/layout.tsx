@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Layout from "@/Layout/Layout";
-import ReactQueryProvider from "@/Layout/ReactQueryProvider";
-import { FontBase } from "@/utils/fonts/FontBase";
+import Providers from "./Providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +14,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`dark ${FontBase().className}`}>
-        <Layout>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </Layout>
+      <body className="dark">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
