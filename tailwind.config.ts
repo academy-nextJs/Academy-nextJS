@@ -24,10 +24,17 @@ export default {
       textColor: {
         white: "var(--color-white)",
         gray: "var(--color-text-gray)",
+        purple: "var(--color-purple)",
+        red: "var(--color-red)",
+        green: "var(--color-green)",
       },
       borderColor: {
         gray: "var(--color-border-gray)",
         garyInGreen: "var(--color-gray)",
+        white: "var(--color-white)",
+        purple: "var(--color-purple)",
+        red: "var(--color-red)",
+        green: "var(--color-green)",
       },
 
     },
