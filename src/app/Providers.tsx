@@ -1,7 +1,8 @@
-'use client'
+"use client";
 import React from "react";
 import { HeroUIProvider } from "@heroui/react";
 import ReactQueryProvider from "@/Layout/ReactQueryProvider";
+import Footer from "@/components/common/Footer";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +11,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         <main>
           {/* <Navbar/> */}
           {children}
-          {/* <Footer/> */}
+          <Footer />
         </main>
       </HeroUIProvider>
     </ReactQueryProvider>
