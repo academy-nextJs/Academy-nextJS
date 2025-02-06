@@ -72,3 +72,15 @@
       format("woff2");
   }
 }
+
+@layer components {
+  .label-input {
+    @apply text-base !text-black !top-[37px] !right-[15px] bg-[#8CFF45] px-2;
+  }
+  .input {
+    @apply !text-xl;
+  }
+  .inputWrapper-input {
+    @apply !rounded-2xl !border-[#363636];
+  }
+}
