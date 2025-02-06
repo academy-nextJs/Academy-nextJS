@@ -1,16 +1,16 @@
-import Container from "@/components/common/Container/Container";
-import React from "react";
-import Image from "next/image";
-import DeltaImg from "../../../assets/Delata.svg";
-import HouseImg from "../../../assets/house.svg";
-import Back from "../../../assets/Background.svg";
+import Container from '@/components/common/Container/Container'
+import React from 'react'
+import Image from 'next/image'
+import DeltaImg from "../../../assets/Delata.svg"
+import HouseImg from "../../../assets/house.svg"
+import Back from "../../../assets/Background.svg"
 
 const Hero = () => {
   return (
-    <div className="pl-96">
-      <div>hero section</div>
-    </div>
-  );
-};
+    
+   <div>hero section</div>
+    
+  )
+}
 
-export default Hero;
+export default Hero

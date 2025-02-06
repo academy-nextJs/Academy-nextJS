@@ -14,7 +14,6 @@
     --color-red: #ff5555;
     --color-border-gray: #565656;
   }
-
   .dark {
     --color-main: #232323;
     --color-green: #8cff45;
@@ -26,21 +25,6 @@
     --color-red: #ff5555;
     --color-border-gray: #565656;
   }
-
-  /* custom tags */
-  h2 {
-    @apply lg:text-[32px] sm:text-2xl text-xl 
-  }
-
-  h3 {
-    @apply lg:text-xl sm:text-lg text-base 
-  }
-
-  p {
-    @apply lg:text-base text-sm 
-  }
-
-
 
   @font-face {
     font-family: Peyda Thin;
