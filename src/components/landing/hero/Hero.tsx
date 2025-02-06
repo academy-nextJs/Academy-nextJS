@@ -4,7 +4,6 @@ import Image from 'next/image'
 import DeltaImg from "../../../assets/Delata.svg"
 import HouseImg from "../../../assets/house.svg"
 import Back from "../../../assets/Background.svg"
-import FileContainer from '@/components/common/FileContainer'
 
 const Hero = () => {
   return (
