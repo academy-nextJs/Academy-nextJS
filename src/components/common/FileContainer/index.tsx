@@ -47,8 +47,7 @@ const FileContainer: FC<FileContainerProps> = ({
     >
       <div
         ref={labelRef}
-        className={`w-[140px] absolute z-10 right-0
-          ${classNames?.label}`}
+        className={`w-[140px] absolute z-10 right-0`}
         style={{
           borderTopRightRadius: RADIUS_SIZE?.[radius],
           borderTopLeftRadius: "100%",
@@ -58,7 +57,7 @@ const FileContainer: FC<FileContainerProps> = ({
           top: `-${classNames?.labelHeight} `,
         }}
       >
-        {label}
+        <div className={`relative z-40 w-full p-4 ${classNames?.label}`}>{label}</div>
         <div
           className="skew-x-[-45deg] absolute -left-6 bottom-0"
           style={{
