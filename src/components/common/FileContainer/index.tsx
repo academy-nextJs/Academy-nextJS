@@ -33,6 +33,7 @@ const FileContainer: FC<FileContainerProps> = ({
   label,
 }) => {
   const labelRef = useRef<HTMLDivElement>(null);
+  const tagRef = useRef<HTMLDivElement>(null);
 
   return (
     <div
@@ -41,7 +42,7 @@ const FileContainer: FC<FileContainerProps> = ({
         borderRadius: RADIUS_SIZE?.[radius],
         borderTopRightRadius: "0px",
         backgroundColor: background,
-        marginTop: classNames?.labelHeight
+        marginTop: classNames?.labelHeight,
       }}
     >
       <div
@@ -75,10 +76,15 @@ const FileContainer: FC<FileContainerProps> = ({
         </div>
       </div>
       <div
+        ref={tagRef}
         className={`w-[calc(100%-${
           labelRef.current?.clientWidth.toString() + "px"
         })]
-          absolute -top-10 left-0 ${classNames?.tag} h-10`}
+          absolute left-0 ${classNames?.tag} h-fit`}
+        style={{
+          width: `calc(95% - ${classNames?.labelWidth})`,
+          top: `-${tagRef.current?.offsetHeight.toString()}px`,
+        }}
       >
         {tag}
       </div>
