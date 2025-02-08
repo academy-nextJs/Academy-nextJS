@@ -24,6 +24,7 @@ export default function Footer() {
         </h1>
       }
     >
+    {/* <footer className="mx-8 h-fit grid grid-cols-2 p-8 pt-16 rounded-3xl bg-[#8CFF45]"> */}
       <Poster />
       <WrapperForm />
       <WrapperLinks />
