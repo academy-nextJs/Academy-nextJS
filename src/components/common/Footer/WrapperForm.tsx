@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Form from "./Form";
+import { TitleIcon } from "@/core/icon/icons";
 
 export default function WrapperForm() {
   return (
@@ -9,7 +9,7 @@ export default function WrapperForm() {
     >
       <div className="flex gap-x-4">
         <h5 className="max-lg:w-full max-lg:text-center">همیشه کنارتیم</h5>
-        <Image width={48} height={16} alt="" src="/three-triangles.svg" />
+        <TitleIcon/>
       </div>
       <h1 className="text-4xl my-6 max-sm:text-center text-nowrap">
         24 ساعت روز و 7 روز هفته در اختیار شماییم !
