@@ -10,13 +10,16 @@ enum RADIUS_SIZE {
 interface ClassNames {
   base: string;
   label: string;
+  labelWrapper: string;
   labelHeight: string;
   labelWidth: string;
   tag: string;
+  cover: string;
 }
 
 interface FileContainerProps {
   radius: "sm" | "md" | "lg";
+  size: "lg" | "md";
   classNames?: Partial<ClassNames>;
   background: string;
   children: ReactNode;
@@ -31,9 +34,44 @@ const FileContainer: FC<FileContainerProps> = ({
   children,
   tag,
   label,
+  size,
 }) => {
   const labelRef = useRef<HTMLDivElement>(null);
   const tagRef = useRef<HTMLDivElement>(null);
+
+  // Hollows
+  const HollowSizeMD = () => {
+    return (
+      <div
+        style={{
+          boxShadow: `4px 6px`,
+          color: `${background}`,
+          pointerEvents: "none",
+        }}
+        className={`w-5 h-5 rounded-br-full z-10 absolute bottom-0
+            left-[-19px] ${classNames?.cover}`}
+      ></div>
+    );
+  };
+  const HollowSizeLG = () => {
+    return (
+      <div
+        className="skew-x-[-45deg] absolute -left-6 bottom-0"
+        style={{
+          backgroundColor: background,
+          height: classNames?.labelHeight,
+          width: `calc(${classNames?.labelWidth} - 10%)`,
+          borderTopLeftRadius: RADIUS_SIZE?.[radius],
+        }}
+      >
+        <div
+          className={`w-5 h-5 rounded-br-full z-10 absolute bottom-0
+            left-[-19px] ${classNames?.cover}`}
+          style={{ boxShadow: `4px 6px ${background}` }}
+        ></div>
+      </div>
+    );
+  };
 
   return (
     <div
@@ -47,32 +85,20 @@ const FileContainer: FC<FileContainerProps> = ({
     >
       <div
         ref={labelRef}
-        className={`w-[140px] absolute z-10 right-0`}
+        className={`w-[140px] absolute z-10 right-0 ${classNames?.labelWrapper}`}
         style={{
           borderTopRightRadius: RADIUS_SIZE?.[radius],
-          borderTopLeftRadius: "100%",
+          borderTopLeftRadius: size == "lg" ? "100%" : RADIUS_SIZE?.[radius],
           backgroundColor: background,
           height: classNames?.labelHeight,
           width: classNames?.labelWidth,
           top: `-${classNames?.labelHeight} `,
         }}
       >
-        <div className={`relative z-40 w-full p-4 ${classNames?.label}`}>{label}</div>
-        <div
-          className="skew-x-[-45deg] absolute -left-6 bottom-0"
-          style={{
-            backgroundColor: background,
-            height: classNames?.labelHeight,
-            width: `calc(${classNames?.labelWidth} - 10%)`,
-            borderTopLeftRadius: RADIUS_SIZE?.[radius],
-          }}
-        >
-          <div
-            className={`w-5 h-5 rounded-br-full z-10 absolute bottom-0
-            left-[-19px]`}
-            style={{ boxShadow: `4px 6px ${background}` }}
-          ></div>
+        <div className={`relative z-40 w-full p-4 ${classNames?.label}`}>
+          {label}
         </div>
+        {size == "lg" ? <HollowSizeLG /> : <HollowSizeMD />}
       </div>
       <div
         ref={tagRef}
@@ -83,6 +109,7 @@ const FileContainer: FC<FileContainerProps> = ({
         style={{
           width: `calc(95% - ${classNames?.labelWidth})`,
           top: `-${tagRef.current?.offsetHeight.toString()}px`,
+          pointerEvents: "none",
         }}
       >
         {tag}
