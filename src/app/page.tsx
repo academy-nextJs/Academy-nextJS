@@ -1,7 +1,5 @@
 
 
-import Button from "@/components/common/Button/Button";
-import Autocomplete from "@/components/common/cccc";
 import Hero from "@/components/landing/hero/Hero";
 
 export default function Home() {
