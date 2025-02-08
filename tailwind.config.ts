@@ -46,6 +46,7 @@ export default {
         "Peyda-700": "Peyda Bold",
         "Peyda-800": "Peyda ExtraBold",
         "Peyda-900": "Peyda black",
+        "Peyda-Numeric": "Peyda Number" 
       },
       fontSize:{
         xs: "12px",
