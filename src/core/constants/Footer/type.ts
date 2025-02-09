@@ -1,3 +1,4 @@
+
 export type TFooterLinks = {
   id: number;
   title: string;
@@ -17,3 +18,8 @@ export type TIcons = {
   viewBox? : string;
   fill?: string;
 };
+
+
+
+
+

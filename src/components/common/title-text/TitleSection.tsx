@@ -3,14 +3,21 @@ import React, { FC } from "react";
 
 interface IProp {
   text: string;
+  iconHeight?: string;
   colorIcon?: string;
+  className?: string;
 }
 
-const TitleSection: FC<IProp> = ({ text, colorIcon }) => {
+const TitleSection: FC<IProp> = ({
+  text,
+  colorIcon,
+  iconHeight,
+  className,
+}) => {
   return (
-    <div className="flex gap-x-4">
-      <h5 className="max-lg:w-full max-lg:text-center">{text}</h5>
-      <TitleIcon fill={colorIcon} />
+    <div className={`flex gap-x-4 py-2 w-fit max-lg:mx-auto ${className}`}>
+      <h5>{text}</h5>
+      <TitleIcon fill={colorIcon} height={iconHeight} />
     </div>
   );
 };
