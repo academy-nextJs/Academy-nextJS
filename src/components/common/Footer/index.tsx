@@ -9,6 +9,7 @@ export default function Footer() {
     <FileContainer
       background="#8CFF45"
       radius="md"
+      size="lg"
       classNames={{
         base: "w-full !h-fit grid grid-cols-2 p-8 pt-16 !mt-[140px]",
         labelHeight: "80px",
@@ -23,6 +24,7 @@ export default function Footer() {
         </h1>
       }
     >
+    {/* <footer className="mx-8 h-fit grid grid-cols-2 p-8 pt-16 rounded-3xl bg-[#8CFF45]"> */}
       <Poster />
       <WrapperForm />
       <WrapperLinks />

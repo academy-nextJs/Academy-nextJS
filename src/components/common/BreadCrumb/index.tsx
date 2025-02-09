@@ -1,44 +1,47 @@
-// /components/NextBreadcrumb.tsx
 "use client";
-
-import React, { ReactNode } from "react";
-
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { RiArrowDropLeftLine } from "react-icons/ri";
 
-type TBreadCrumbProps = {
-  pageElement: ReactNode | string;
-};
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
 
-const NextBreadcrumb = ({ pageElement }: TBreadCrumbProps) => {
-  const paths = usePathname();
-  const pathNames = paths.split("/").filter((path) => path);
-
+export default function Breadcrumb({
+  items,
+  className = "",
+}: {
+  items: BreadcrumbItem[];
+  className?: string;
+}) {
   return (
-    <div>
-      <ul dir="rtl" className={"flex py-4 bg-base text-gray text-sm font-Peyda-500"}>
-        <li className={` mx-2 hover:scale-110 duration-100`}>
-          <Link href={"/"}>خانه</Link>
-        </li>
-        {pathNames.length > 0 && ">"}
-        {pathNames.map((link, index) => {
-          const href = `/${pathNames.slice(0, index + 1).join("/")}`;
-          const itemClasses =
-            paths === href
-              ? ` mx-2  text-green pointer-events-none `
-              : `hover:scale-110 duration-200 mx-2 text-gray`;
-          return (
-            <React.Fragment key={index}>
-              <li className={itemClasses}>
-                <Link href={href}>{pageElement}</Link>
-              </li>
-              {pathNames.length !== index + 1 && ">"}
-            </React.Fragment>
-          );
-        })}
-      </ul>
-    </div>
+    <nav
+      dir="rtl"
+      aria-label="Breadcrumb"
+      className={`flex items-center bg-base font-Peyda-400 text-sm py-2  text-gray ${className}`}
+    >
+      <Link
+        href="/"
+        className="hover:scale-110 duration-200 "
+        aria-label="Home"
+      >
+        <span>خانه</span>
+      </Link>
+      {items.map((item) => (
+        <div key={item.label} className="flex items-center">
+          <RiArrowDropLeftLine size={25} className="text-gray " />
+          {item.href ? (
+            <Link
+              href={item.href}
+              className="hover:scale-105 duration-200 "
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <span className="text-green">{item.label}</span>
+          )}
+        </div>
+      ))}
+    </nav>
   );
-};
-
-export default NextBreadcrumb;
+}

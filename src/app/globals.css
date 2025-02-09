@@ -71,6 +71,11 @@
     src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Black.woff2"),
       format("woff2");
   }
+  @font-face {
+    font-family: Peyda Number;
+    src: local("Peyda"), url("../assets/Fonts/Peyda(FaNum).ttf"),
+      format("ttf");
+  }
 }
 
 @layer components {

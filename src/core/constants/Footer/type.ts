@@ -10,3 +10,10 @@ export type TIconList = {
   href: string;
   width?: number;
 };
+
+export type TIcons = {
+  width?: string;
+  height?: string;
+  viewBox? : string;
+  fill?: string;
+};
