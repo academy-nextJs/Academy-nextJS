@@ -5,6 +5,7 @@ import React, { ReactNode } from "react";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { IoIosArrowBack } from "react-icons/io";
 
 type TBreadCrumbProps = {
   pageElement: ReactNode | string;
@@ -16,11 +17,11 @@ const NextBreadcrumb = ({ pageElement }: TBreadCrumbProps) => {
 
   return (
     <div>
-      <ul dir="rtl" className={"flex py-4 bg-base text-gray text-sm font-Peyda-500"}>
+      <ul dir="rtl" className={"flex py-4 bg-base items-center text-gray text-sm font-Peyda-500"}>
         <li className={` mx-2 hover:scale-110 duration-100`}>
           <Link href={"/"}>خانه</Link>
         </li>
-        {pathNames.length > 0 && ">"}
+        {pathNames.length > 0 && <IoIosArrowBack/>}
         {pathNames.map((link, index) => {
           const href = `/${pathNames.slice(0, index + 1).join("/")}`;
           const itemClasses =
@@ -32,7 +33,7 @@ const NextBreadcrumb = ({ pageElement }: TBreadCrumbProps) => {
               <li className={itemClasses}>
                 <Link href={href}>{pageElement}</Link>
               </li>
-              {pathNames.length !== index + 1 && ">"}
+              {pathNames.length !== index + 1 && <IoIosArrowBack/>}
             </React.Fragment>
           );
         })}
