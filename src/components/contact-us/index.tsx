@@ -17,7 +17,7 @@ const ContactUsWrapper = () => {
         colorIcon="#8cff45"
         text="ارتباط با ما"
       />
-      <div className="lg:flex gap-4 justify-between items-center">
+      <div className="lg:flex gap-4 justify-between items-center mb-60">
         {/* Right side */}
         <div className="flex flex-col gap-6 text-white max-lg:text-center">
           <h1 className="text-4xl max-sm:text-center">
