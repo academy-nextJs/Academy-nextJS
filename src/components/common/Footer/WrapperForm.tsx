@@ -14,7 +14,7 @@ export default function WrapperForm() {
         تیم دلتا با ارائه بهترین نیرو های خدماتی و سرویس های املاکی سعی دارد تا
         بتواند در تمام لحظات کنار شما باشد .
       </p>
-      <Form />
+      <Form  variant="footer"/>
     </div>
   );
 }

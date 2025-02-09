@@ -20,6 +20,7 @@ export default {
         graySecondary: "var(--color-secondary-gray)",
         purple: "var(--color-purple)",
         red: "var(--color-red)",
+        black : "var(--color-Black)"
       },
       textColor: {
         white: "var(--color-white)",
@@ -27,6 +28,7 @@ export default {
         purple: "var(--color-purple)",
         red: "var(--color-red)",
         green: "var(--color-green)",
+        black : "var(--color-Black)"
       },
       borderColor: {
         gray: "var(--color-border-gray)",

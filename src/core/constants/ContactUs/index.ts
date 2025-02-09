@@ -1,4 +1,3 @@
-'use client'
 // Contact Us ways
 import { PiPhoneCall } from "react-icons/pi";
 import { contactUs } from "./type";
