@@ -34,6 +34,7 @@ export default function WrapperLinks() {
             width={trust.width ? trust.width : 36}
             href={trust.href}
             picture={trust.picture}
+            type="picture"
             size="lg"
             key={index}
           />
@@ -56,7 +57,8 @@ export default function WrapperLinks() {
               height={36}
               width={17}
               href={social.href}
-              picture={social.picture}
+              type="icon"
+              Icon={social.icon}
               size="md"
               key={index}
             />
