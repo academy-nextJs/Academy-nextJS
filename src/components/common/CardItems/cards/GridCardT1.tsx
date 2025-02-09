@@ -12,7 +12,7 @@ interface GridCardT1Props {
 
 const GridCardT1: FC<GridCardT1Props> = ({ title, describe, score, href }) => {
   return (
-    <div className="max-w-[306px] flex flex-col items-center gap-y-6">
+    <div className="max-w-[316px] flex flex-col items-center mx-auto gap-y-6 group hover:cursor-pointer">
       <CardHeader score={score} href={href}>
         <Title title={title} describe={describe} />
       </CardHeader>

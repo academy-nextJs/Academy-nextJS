@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 
 interface TitleProps {
   title: string;
@@ -9,11 +9,11 @@ interface TitleProps {
 const Title: FC<TitleProps> = ({ title, describe, discount }) => {
   return (
     <div
-      className={`font-Peyda-500 flex flex-row-reverse items-center gap-1 ${
+      className={`font-Peyda-500 flex flex-row-reverse items-center gap-1 w-full ${
         discount && "justify-between w-full"
       }`}
     >
-      <h1 className="text-xl text-white">{title}</h1>
+      <h1 className=" text-white text-[18px]">{title}</h1>
       {describe && (
         <span className="text-[#444444] text-sm">( {describe} )</span>
       )}

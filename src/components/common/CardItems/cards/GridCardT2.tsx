@@ -6,19 +6,19 @@ import Describe from "../components/Describe";
 interface GridCardT2Props {
   title: string;
   location: string;
-  discount: string;
+  discount?: string;
   score: string;
   href: string;
   bathroom: number;
   room: number;
   yard: boolean;
-  garage: number;
-  capacity: number;
+  garage?: number;
+  capacity?: number;
   price: string;
   isRent: boolean;
-  discountPercent: number;
+  discountPercent?: number;
   describeType: "pipe" | "comma";
-  priceTime: string;
+  priceTime?: string;
 }
 
 const GridCardT2: FC<GridCardT2Props> = ({
