@@ -35,7 +35,7 @@ type ButtonProps = {
   endContent?: ReactNode;
   isMagnetic?: boolean;
   children: ReactNode;
-  ClassName? : string;
+  ClassName?: string;
   variant?: "bordered" | "solid";
 };
 
@@ -99,6 +99,7 @@ export default function Button({
         className="w-full"
       >
         <button
+          type="submit"
           ref={buttonRef}
           onClick={handleClick}
           className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${ClassName} 
