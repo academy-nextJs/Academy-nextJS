@@ -1,5 +1,5 @@
 import Form from "./Form";
-import { TitleIcon } from "@/core/icon/icons";
+import { TriangleIcon } from "@/core/icon/icons";
 
 export default function WrapperForm() {
   return (
@@ -9,9 +9,9 @@ export default function WrapperForm() {
     >
       <div className="flex gap-x-4">
         <h5 className="max-lg:w-full max-lg:text-center">همیشه کنارتیم</h5>
-        <TitleIcon/>
+        <TriangleIcon width={48} height={16} fill="#363636" />
       </div>
-      <h1 className="text-4xl my-6 max-sm:text-center text-nowrap">
+      <h1 className="text-3xl sm:text-4xl max-lg:w-full max-lg:text-center my-6 max-sm:text-center sm:text-nowrap">
         24 ساعت روز و 7 روز هفته در اختیار شماییم !
       </h1>
       <p className="text-xl font-Peyda-400 xl:text-nowrap max-lg:text-center">

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Poster() {
   return (
-    <div className="relative w-[524px] h-[612px] bg-red-900 max-lg:hidden">
+    <div className="relative w-[524px] h-[612px] max-lg:hidden">
       <Image
         className="relative top-4"
         src="/man.png"

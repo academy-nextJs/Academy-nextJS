@@ -18,7 +18,7 @@ export default function Form() {
   return (
     <form
       onSubmit={formik.handleSubmit}
-      className="w-[618px] flex flex-wrap gap-x-6 gap-y-[42px] xl:mt-[66px] mt-6"
+      className="w-[618px] flex flex-wrap gap-x-6 md:gap-y-[42px] xl:mt-[66px] mt-6"
     >
       <Input
         className="w-[297px] max-md:w-full font-Peyda-400 !text-xl"
@@ -53,7 +53,7 @@ export default function Form() {
         onChange={formik.handleChange}
       />
       <Textarea
-        className="w-full font-Peyda-400 !text-xl -mt-6"
+        className="w-full font-Peyda-400 !text-xl md:-mt-6"
         label="پیام شما :"
         labelPlacement="outside"
         placeholder="..."
@@ -69,7 +69,7 @@ export default function Form() {
         value={formik.values.describe}
         onChange={formik.handleChange}
       />
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full max-md:mt-4">
         ارسال پیام
       </Button>
     </form>
