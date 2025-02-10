@@ -14,9 +14,9 @@ interface IProps {
 
 const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
   return (
-    <div className="lg:flex gap-3 justify-between items-center mb-60">
+    <div className="lg:flex gap-3 justify-between items-center lg:mb-60 mb-20">
       {/* title page */}
-      <div className="flex flex-col gap-7 w-2/5 text-white max-lg:text-center">
+      <div className="flex flex-col gap-7 lg:w-2/5 text-white max-lg:text-center">
         <h1 className="text-4xl max-sm:text-center">
           {title}
           <span className="font-Peyda-600 ">{titleBold}</span>

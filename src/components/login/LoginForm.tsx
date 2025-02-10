@@ -11,8 +11,8 @@ const LoginForm = () => {
   // Handle Formik
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      Email: "",
+      Password: "",
     },
     onSubmit: (value) => {
       console.log(value);
@@ -24,27 +24,28 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className="flex gap-2 justify-between items-center mt-3">
+      <div className="flex gap-2 justify-between items-center">
         <Input
           className="max-md:w-full w-[47%]"
           type="email"
           label="ایمیل شما:"
-          //   labelPlacement="outside"
+          // labelPlacement="outside"
           placeholder="مثال : dakjsbd@email.com"
           variant="bordered"
           classNames={{
             label: `label-input px-2 !top-0 !bg-base`,
           }}
-          id="email"
-          name="email"
-          // value={formik.values.email}
+          id="Email"
+          name="Email"
+          value={formik.values.Email}
           onChange={formik.handleChange}
         />
         <Input
           className="max-md:w-full  w-[47%]"
+          label="کلمه عبور:"
           endContent={
             <button
-              aria-label="toggle password visibility"
+              aria-label=""
               className="focus:outline-none"
               type="button"
               onClick={toggleVisibility}
@@ -53,13 +54,15 @@ const LoginForm = () => {
             </button>
           }
           classNames={{
-            label: `label-input px-2 !top-0 !bg-base`,
+            label: `label-input px-2 !-top-2 !bg-base`,
           }}
-          label="کلمه عبور:"
+          // labelPlacement="outside"
           type={isVisible ? "text" : "password"}
           variant="bordered"
-          id="password"
-          name="password"
+          id="Password"
+          name="Password"
+          value={formik.values.Password}
+          onChange={formik.handleChange}
         />
       </div>
       {/* forget password button */}
