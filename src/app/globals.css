@@ -26,6 +26,10 @@
     --color-border-gray: #565656;
   }
 
+  body {
+    overflow-x: hidden !important;
+  }
+
   @font-face {
     font-family: Peyda Thin;
     src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Thin.woff2"),
