@@ -6,22 +6,23 @@ import React, { FC } from "react";
 
 interface IProps {
   buttonArray: TAuthTab[];
+  color :  "success" | "default" | "primary" | "secondary" | "warning" | "danger" | undefined
 }
 
-const CustomTab: FC<IProps> = ({ buttonArray }) => {
+const CustomTab: FC<IProps> = ({ buttonArray,color }) => {
   const pathname = usePathname();
   return (
     <div>
       <Tabs
-        selectedKey={pathname}
+        selectedKey={color === "success" ? pathname : undefined}
         aria-label="Options"
-        color={"success"}
-        classNames={{ tabList: "p-1.5 w-full", tab: `px-12`, base: "w-full" }}
+        color={color}
+        classNames={{ tabList: "p-1.5 w-full", tab: `px-2`, base: "w-full" }}
       >
         {buttonArray?.map((tab) => (
           <Tab
             key={tab.Key}
-            href={tab.href}
+            href={tab.href && tab.href}
             title={
               <div className={`flex items-center gap-2`}>
                 <tab.icon size={15} />

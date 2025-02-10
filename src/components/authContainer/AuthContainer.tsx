@@ -3,6 +3,7 @@ import { AuthTab } from "@/core/constants/Auth";
 import CustomTab from "../login/Tab";
 import Button from "../common/Button/Button";
 import { FcGoogle } from "react-icons/fc";
+import WinnerBox from "./WinnerBox";
 
 interface IProps {
   title: string;
@@ -21,7 +22,7 @@ const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
           <span className="font-Peyda-600 ">{titleBold}</span>
         </h1>
         <p>{desc}</p>
-        <CustomTab buttonArray={AuthTab} />
+        <CustomTab buttonArray={AuthTab} color="success"/>
         <Button
           color="green"
           size="full"
@@ -39,6 +40,7 @@ const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
         {/* form box */}
         <div>{children}</div>
       </div>
+      <WinnerBox/>
     </div>
   );
 };

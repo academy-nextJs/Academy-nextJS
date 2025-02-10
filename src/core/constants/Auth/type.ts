@@ -4,5 +4,5 @@ export type TAuthTab = {
   Key: string;
   text: string;
   icon: IconType;
-  href : string;
+  href? : string;
 };
