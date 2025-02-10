@@ -1,29 +1,25 @@
-import { Pagination, A11y, Autoplay } from "swiper/modules";
+"use client";
+import { FC, ReactNode } from "react";
+import { A11y, Autoplay, Pagination } from "swiper/modules";
 import { Swiper } from "swiper/react";
+import { SwiperOptions } from "swiper/types";
+
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "swiper/css/pagination";
 import "./SwiperCustomize.css";
-import React, { FC } from "react";
 
 interface SliderProps {
-  loop: boolean;
+  children: ReactNode;
   className: string;
-  slidesPerView: number;
-  children: React.ReactNode;
 }
 
-const Slider: FC<SliderProps> = (props) => {
+const Slider: FC<Partial<SwiperOptions & SliderProps>> = (props) => {
   return (
     <Swiper
       modules={[Pagination, Autoplay, A11y]}
       pagination={{ clickable: true }}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
       {...props}
     >
       {props.children}

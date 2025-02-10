@@ -7,11 +7,12 @@ import {
   SocialNetworks,
 } from "@/core/constants/Footer";
 
-export default function WrapperLinks() {
+export default function WrapperLinks({ color }: { color: string }) {
   return (
     <div
       dir="rtl"
-      className="bg-[#232323] p-[48px] pb-6 min-h-[496px] rounded-[56px] col-span-2 relative text-white"
+      className="p-[48px] pb-6 min-h-[496px] rounded-[56px] col-span-2 relative text-white"
+      style={{ backgroundColor: color }}
     >
       <h1 className="text-[32px] font-Peyda-500 max-xl:hidden">پلتفرم دلتا</h1>
       <div className="w-full flex max-md:gap-y-12 max-md:flex-wrap max-xl:justify-evenly min-[1360px]:gap-x-[71px] gap-x-10 mt-4 mb-[39px]">

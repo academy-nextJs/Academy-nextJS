@@ -9,32 +9,40 @@ enum RADIUS_SIZE {
 
 interface ClassNames {
   base: string;
-  label: string;
-  labelWrapper: string;
-  labelHeight: string;
-  labelWidth: string;
-  tag: string;
-  cover: string;
+  innerLabel: string;
+  wrapperLabel: string;
+  wrapperTag: string;
+  coverHollow: string;
 }
 
 interface FileContainerProps {
+  children: ReactNode;
+  background: string;
   radius: "sm" | "md" | "lg";
   size: "lg" | "md";
-  classNames?: Partial<ClassNames>;
-  background: string;
-  children: ReactNode;
-  tag?: ReactNode;
+  width?: string;
+  height?: string;
   label?: ReactNode;
+  tag?: ReactNode;
+  labelWidth?: string;
+  labelHeight?: string;
+  tagHeight?: string;
+  classNames?: Partial<ClassNames>;
 }
 
 const FileContainer: FC<FileContainerProps> = ({
-  radius,
-  classNames,
-  background,
   children,
-  tag,
-  label,
+  background,
+  radius,
   size,
+  width,
+  height,
+  label,
+  tag,
+  labelWidth,
+  labelHeight,
+  tagHeight,
+  classNames,
 }) => {
   const labelRef = useRef<HTMLDivElement>(null);
   const tagRef = useRef<HTMLDivElement>(null);
@@ -49,7 +57,7 @@ const FileContainer: FC<FileContainerProps> = ({
           pointerEvents: "none",
         }}
         className={`w-5 h-5 rounded-br-full z-10 absolute bottom-0
-            left-[-19px] ${classNames?.cover}`}
+            left-[-19px] ${classNames?.coverHollow}`}
       ></div>
     );
   };
@@ -59,14 +67,14 @@ const FileContainer: FC<FileContainerProps> = ({
         className="skew-x-[-45deg] absolute -left-6 bottom-0"
         style={{
           backgroundColor: background,
-          height: classNames?.labelHeight,
-          width: `calc(${classNames?.labelWidth} - 10%)`,
+          height: labelHeight,
+          width: `80%`,
           borderTopLeftRadius: RADIUS_SIZE?.[radius],
         }}
       >
         <div
           className={`w-5 h-5 rounded-br-full z-10 absolute bottom-0
-            left-[-19px] ${classNames?.cover}`}
+            left-[-19px] ${classNames?.coverHollow}`}
           style={{ boxShadow: `4px 6px ${background}` }}
         ></div>
       </div>
@@ -75,40 +83,40 @@ const FileContainer: FC<FileContainerProps> = ({
 
   return (
     <div
-      className={`w-[306px] h-[203px] relative ${classNames?.base}`}
+      className={`h-fit relative z-30 ${classNames?.base}`}
       style={{
+        width: width,
+        height: height,
         borderRadius: RADIUS_SIZE?.[radius],
         borderTopRightRadius: "0px",
         backgroundColor: background,
-        marginTop: classNames?.labelHeight,
+        marginTop: labelHeight,
       }}
     >
       <div
         ref={labelRef}
-        className={`w-[140px] absolute z-10 right-0 ${classNames?.labelWrapper}`}
+        className={`absolute z-30 !right-0 ${classNames?.wrapperLabel}`}
         style={{
           borderTopRightRadius: RADIUS_SIZE?.[radius],
-          borderTopLeftRadius: size == "lg" ? "100%" : RADIUS_SIZE?.[radius],
+          borderTopLeftRadius: size == "lg" ? "30%" : RADIUS_SIZE?.[radius],
           backgroundColor: background,
-          height: classNames?.labelHeight,
-          width: classNames?.labelWidth,
-          top: `-${classNames?.labelHeight} `,
+          height: labelHeight,
+          width: labelWidth,
+          top: `-${labelHeight}`,
         }}
       >
-        <div className={`relative z-40 w-full p-4 ${classNames?.label}`}>
+        <div className={`relative z-40 w-full p-4 ${classNames?.innerLabel}`}>
           {label}
         </div>
         {size == "lg" ? <HollowSizeLG /> : <HollowSizeMD />}
       </div>
       <div
         ref={tagRef}
-        className={`w-[calc(100%-${
-          labelRef.current?.clientWidth.toString() + "px"
-        })]
-          absolute left-0 ${classNames?.tag} h-fit`}
+        className={`absolute !left-0 h-fit flex justify-end items-start ${classNames?.wrapperTag}`}
         style={{
-          width: `calc(95% - ${classNames?.labelWidth})`,
-          top: `-${tagRef.current?.offsetHeight.toString()}px`,
+          width: `calc(95% - ${labelWidth})`,
+          height: `${tagHeight ? tagHeight : labelHeight}`,
+          top: `-${tagHeight ? tagHeight : labelHeight}`,
           pointerEvents: "none",
         }}
       >

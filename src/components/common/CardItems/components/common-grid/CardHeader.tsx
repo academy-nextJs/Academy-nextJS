@@ -20,14 +20,15 @@ const CardHeader: FC<CardHeaderProps> = ({ children, score, href }) => {
         size="md"
         label={<Score score={score} />}
         tag={<Arrow href={href} />}
+        labelHeight="30px"
+        labelWidth="100px"
+        tagHeight="30px"
+        width="310px"
         classNames={{
-          base: "w-[310px] h-[202px] p-4 pt-[32px] group-hover:!bg-green hover:shadow-[0px_8px_24px_rgba(140,255,69,0.12)]",
-          labelHeight: "30px",
-          labelWidth: "100px",
-          label: "!p-3 flex justify-center items-center",
-          labelWrapper: "group-hover:!bg-green",
-          cover: "group-hover:!text-green",
-          tag: "h-[30px] -top-[30px]",
+          base: "h-[202px] p-4 pt-[32px] group-hover:!bg-green hover:shadow-[0px_8px_24px_rgba(140,255,69,0.12)]",
+          innerLabel: "!p-3 flex justify-center items-center",
+          wrapperLabel: "group-hover:!bg-green",
+          coverHollow: "group-hover:!text-green",
         }}
       >
         <Slider slidesPerView={1} className="w-full h-full rounded-[20px]" loop>

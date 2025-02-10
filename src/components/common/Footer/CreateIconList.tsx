@@ -30,10 +30,8 @@ const CreateIconList: FC<CreateIconListProps> = ({
   return (
     <Link
       href={href}
-      className={`
-        ${ICON_SIZE?.[size]} 
-        first:bg-white first:text-black rounded-2xl border-1 border-white flex items-center justify-center
-        `}
+      className={`${ICON_SIZE?.[size]} first:bg-white first:text-black
+         rounded-2xl border-1 border-white flex items-center justify-center`}
     >
       {type == "picture" ? (
         <Image
