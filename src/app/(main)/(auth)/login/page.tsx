@@ -1,9 +1,11 @@
-import React from 'react'
-
+import LoginWrapper from "@/components/login";
+import React from "react";
 const Login = () => {
   return (
-    <div className='bg-white'>Login</div>
-  )
-}
+    <div dir="rtl">
+      <LoginWrapper />
+    </div>
+  );
+};
 
-export default Login
+export default Login;
