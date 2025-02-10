@@ -35,6 +35,7 @@ type ButtonProps = {
   endContent?: ReactNode;
   isMagnetic?: boolean;
   children: ReactNode;
+  ClassName? : string;
   variant?: "bordered" | "solid";
 };
 
@@ -47,6 +48,7 @@ export default function Button({
   endContent,
   variant = "solid",
   children,
+  ClassName,
   isMagnetic,
 }: ButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -99,7 +101,7 @@ export default function Button({
         <button
           ref={buttonRef}
           onClick={handleClick}
-          className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all 
+          className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${ClassName} 
             ${
               variant === "solid"
                 ? COLORS[color]
