@@ -90,4 +90,11 @@
   .inputWrapper-input {
     @apply !rounded-2xl !border-[#363636];
   }
+  .bgGradient_title {
+    background: linear-gradient(90deg,
+        rgba(87, 81, 225, 0) 0%,
+        rgba(244, 245, 243, 0.5) 53.1%,
+        rgba(48, 44, 123, 0) 100%);
+    border-radius: 2px;
+  }
 }
