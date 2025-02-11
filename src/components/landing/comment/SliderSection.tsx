@@ -1,6 +1,6 @@
 "use client";
 import { SwiperSlide } from "swiper/react";
-import Card from "./Card";
+import Card from "./card";
 import Slider from "@/components/common/Slider";
 
 const SliderSection = () => {

@@ -76,7 +76,7 @@ const Card: FC<CardProps> = ({
             </h1>
           </>
         )}
-        <p className="font-Peyda-400 mt-3 max-lg:h-12">{describe}</p>
+        <p className="font-Peyda-400 mt-3 h-fit">{describe}</p>
       </FileContainer>
     </FileContainer>
   );
