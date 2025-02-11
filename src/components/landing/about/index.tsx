@@ -3,14 +3,14 @@ import Card from "./Card";
 
 export default function AboutUs() {
   return (
-    <div className="w-full flex flex-col items-center gap-6 text-white font-Peyda-500 ">
+    <div className="w-[1376px] flex flex-col items-center gap-6 text-white font-Peyda-500 ">
       <Chip side="Two-way">درباره ما</Chip>
       <h1 className="text-4xl max-sm:text-3xl">دلتا رو بیشتر بشناس !</h1>
       <p className="font-Peyda-400 text-center">
         تیم دلتا با ارائه بهترین نیرو های خدماتی و سرویس های املاکی سعی دارد تا
         بتواند در تمام لحظات کنار شما باشد .
       </p>
-      <div className=" w-full grid max-md:grid-cols-1 max-[1462px]:grid-cols-2 grid-cols-3 max-md:grid-rows-6 grid-rows-2 gap-5 mt-14">
+      <div className="w-full grid max-md:grid-cols-1 max-[1462px]:grid-cols-2 grid-cols-3 max-md:grid-rows-6 grid-rows-2 gap-5 mt-14">
         <Card
           color="#444444"
           width={445}
