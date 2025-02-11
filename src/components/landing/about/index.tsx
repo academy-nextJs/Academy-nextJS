@@ -15,72 +15,66 @@ export default function AboutUs() {
           color="#444444"
           width={445}
           height={225}
-          className="col-span-1 row-span-1 max-[1462px]:!w-full"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-white"></div>
-          <h1 className="text-2xl mt-3">
-            <span className="font-Peyda-Numeric">+12000</span> خونه فعال
-          </h1>
-          <p className="font-Peyda-400 mt-3 max-lg:h-12">
-            خانه هایی که نضافت و امنیت شان تامین شده!
-          </p>
-        </Card>
+          classNames={{
+            base: "col-span-1 row-span-1 max-[1462px]:!w-full",
+          }}
+          icon="/security.png"
+          statistics="+12000"
+          title="خونه فعال"
+          describe="خانه هایی که نضافت و امنیت شان تامین شده!"
+        />
         <Card
           color="#7569FF"
           width={446}
           height={510}
-          className="col-span-1 row-span-2 max-sm:text-sm max-[1462px]:!w-full max-md:col-span-1 max-[1462px]:col-span-2 max-[1462px]:order-1 text-xl max-sm:leading-8 leading-10 text-center"
-        >
-          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+          classNames={{
+            base: "col-span-1 row-span-2 max-sm:text-sm max-[1462px]:!w-full max-md:col-span-1 max-[1462px]:col-span-2 max-[1462px]:order-1 text-xl max-sm:leading-8 leading-10 text-center",
+          }}
+          describe="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
           از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و
           سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای
           متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه
           درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با
           نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان
-          خلاقی و فرهنگ پیشرو د...
-        </Card>
+          خلاقی و فرهنگ پیشرو د..."
+        />
         <Card
           color="#232323"
           width={445}
           height={225}
-          className="col-span-1 row-span-1 max-[1462px]:!w-full"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-white"></div>
-          <h1 className="text-2xl mt-3">
-            <span className="font-Peyda-Numeric">24/7</span> ساعت شبانه روز
-          </h1>
-          <p className="font-Peyda-400 mt-3 max-lg:h-12">
-            تیم پشتیبانی در تمام طول روز همراه شما هستن
-          </p>
-        </Card>
+          classNames={{
+            base: "col-span-1 row-span-1 max-[1462px]:!w-full",
+          }}
+          icon="/support.png"
+          statistics="24/7"
+          title="ساعت شبانه روز"
+          describe="تیم پشتیبانی در تمام طول روز همراه شما هستن"
+        />
         <Card
           color="#232323"
           width={445}
           height={225}
-          className="col-span-1 row-span-1 max-[1462px]:!w-full"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-white"></div>
-          <h1 className="text-2xl mt-3">
-            <span className="font-Peyda-Numeric">10+</span> سال سابقه درخشان
-          </h1>
-          <p className="font-Peyda-400 mt-3 max-lg:h-12">
-            در مهمان نوازی به شما مسافران عزیز
-          </p>
-        </Card>
+          classNames={{
+            base: "col-span-1 row-span-1 max-[1462px]:!w-full",
+            icon: "!top-0"
+          }}
+          icon="/cup.png"
+          statistics="+10"
+          title="سال سابقه درخشان"
+          describe="در مهمان نوازی به شما مسافران عزیز"
+        />
         <Card
           color="#444444"
           width={445}
           height={225}
-          className="col-span-1 row-span-1 max-[1462px]:!w-full"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-white"></div>
-          <h1 className="text-2xl mt-3">
-            <span className="font-Peyda-Numeric">15.000+</span> نظرات کاربران
-          </h1>
-          <p className="font-Peyda-400 mt-3 max-lg:h-12">
-            رضایت مسافرانی که از پلتفرم دلتا استفاده کردند
-          </p>
-        </Card>
+          classNames={{
+            base: "col-span-1 row-span-1 max-[1462px]:!w-full",
+          }}
+          icon="/heart.png"
+          statistics="+15.000"
+          title="نظرات کاربران"
+          describe="رضایت مسافرانی که از پلتفرم دلتا استفاده کردند"
+        />
       </div>
     </div>
   );
