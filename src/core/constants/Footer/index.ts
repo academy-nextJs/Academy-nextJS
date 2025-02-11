@@ -1,4 +1,7 @@
+import { TbBrandLinkedin } from "react-icons/tb";
 import { TFooterLinks, TIconList } from "./type";
+import { BsTelegram } from "react-icons/bs";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 export const FooterLinks: TFooterLinks[] = [
   {
@@ -37,10 +40,10 @@ export const FooterLinks: TFooterLinks[] = [
 
 // Social Networks
 export const SocialNetworks: TIconList[] = [
-  { picture: "/etemad3.png", href: "/" },
-  { picture: "/etemad3.png", href: "/" },
-  { picture: "/etemad3.png", href: "/" },
-  { picture: "/etemad3.png", href: "/" },
+  { icon: TbBrandLinkedin, href: "/" },
+  { icon: FaInstagram , href: "/" },
+  { icon: BsTelegram, href: "/" },
+  { icon: FaWhatsapp, href: "/" },
 ];
 
 // Trust icons

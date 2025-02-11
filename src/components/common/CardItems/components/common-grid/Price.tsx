@@ -11,7 +11,6 @@ interface PriceProps {
 const Price: FC<PriceProps> = ({ price, discount, isRent, time }) => {
   return (
     <div
-      dir="rtl"
       className={`w-full h-9 mt-4 rounded-xl text-[15px] bg-[#444444] group-hover:bg-green 
         flex items-center ${
           !discount ? "px-4 justify-between" : "px-2 justify-center"

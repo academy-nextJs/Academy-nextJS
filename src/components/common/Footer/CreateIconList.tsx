@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { IconType } from "react-icons";
 
 enum ICON_SIZE {
   "md" = "w-10 h-10",
@@ -10,9 +11,11 @@ enum ICON_SIZE {
 interface CreateIconListProps {
   width: number;
   height: number;
-  picture: string;
+  picture?: string;
   size: "md" | "lg";
   href: string;
+  Icon?: IconType;
+  type: "icon" | "picture";
 }
 
 const CreateIconList: FC<CreateIconListProps> = ({
@@ -21,16 +24,25 @@ const CreateIconList: FC<CreateIconListProps> = ({
   picture,
   size,
   href,
+  Icon,
+  type,
 }) => {
   return (
     <Link
       href={href}
-      className={`
-        ${ICON_SIZE?.[size]} 
-        first:bg-white rounded-2xl border-1 border-white flex items-center justify-center
-        `}
+      className={`${ICON_SIZE?.[size]} first:bg-white first:text-black
+         rounded-2xl border-1 border-white flex items-center justify-center`}
     >
-      <Image width={width} height={height} src={picture} alt="" />
+      {type == "picture" ? (
+        <Image
+          width={width}
+          height={height}
+          src={picture ? picture : ""}
+          alt=""
+        />
+      ) : (
+        Icon && <Icon size={18} />
+      )}
     </Link>
   );
 };

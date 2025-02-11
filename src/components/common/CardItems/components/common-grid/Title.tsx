@@ -9,7 +9,7 @@ interface TitleProps {
 const Title: FC<TitleProps> = ({ title, describe, discount }) => {
   return (
     <div
-      className={`font-Peyda-500 flex flex-row-reverse items-center gap-1 w-full ${
+      className={`font-Peyda-500 flex items-center gap-1 w-full ${
         discount && "justify-between w-full"
       }`}
     >

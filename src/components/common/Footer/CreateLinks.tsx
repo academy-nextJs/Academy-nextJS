@@ -16,7 +16,7 @@ const CreateLinks: FC<CreateLinksProps> = ({ title, links, isLink = true }) => {
   ));
 
   const CreateAsSpan = links.map((link, index: number) => (
-    <span key={index}>{link.name}</span>
+    <span key={index} className="max-sm:text-center">{link.name}</span>
   ));
 
   return (
