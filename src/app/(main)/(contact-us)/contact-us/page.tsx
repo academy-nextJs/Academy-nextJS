@@ -1,9 +1,12 @@
-import React from 'react'
+import ContactUsWrapper from "@/components/contact-us";
+import React from "react";
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
-  )
-}
+    <div dir="rtl">
+      <ContactUsWrapper />
+    </div>
+  );
+};
 
-export default ContactUs
+export default ContactUs;

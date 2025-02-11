@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const SingleHouseRent = () => {
   return (
-    <div>SingleHouseRent</div>
-  )
-}
+    <>
+      <div>SingleHouseRent</div>
+    </>
+  );
+};
 
-export default SingleHouseRent
+export default SingleHouseRent;
