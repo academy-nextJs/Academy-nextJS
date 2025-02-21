@@ -6,10 +6,10 @@ import React, { FC } from "react";
 
 interface IProps {
   buttonArray: TAuthTab[];
-  color :  "success" | "default" | "primary" | "secondary" | "warning" | "danger" | undefined
+  color: "success" | "default" | "primary" | "secondary" | "warning" | "danger" | undefined
 }
 
-const CustomTab: FC<IProps> = ({ buttonArray,color }) => {
+const CustomTab: FC<IProps> = ({ buttonArray, color }) => {
   const pathname = usePathname();
   return (
     <div>
