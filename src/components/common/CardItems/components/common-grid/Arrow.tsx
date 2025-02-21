@@ -1,5 +1,5 @@
+import { ArrowIcon } from "@/core/icon/icons";
 import Link from "next/link";
-import { HiArrowLongLeft } from "react-icons/hi2";
 
 const Arrow = ({ href }: { href: string }) => {
   return (
@@ -7,7 +7,7 @@ const Arrow = ({ href }: { href: string }) => {
       href={href}
       className="w-[45px] h-[22px] flex justify-center items-center rounded-[8px] bg-[#393939] group-hover:bg-green"
     >
-      <HiArrowLongLeft size={25} className="text-white group-hover:text-[#393939]" />
+      <ArrowIcon width={21} className="text-white group-hover:text-[#393939]" />
     </Link>
   );
 };

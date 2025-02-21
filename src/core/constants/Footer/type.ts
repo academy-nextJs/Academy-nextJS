@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 
 export type TFooterLinks = {
   id: number;
@@ -7,15 +8,16 @@ export type TFooterLinks = {
 };
 
 export type TIconList = {
-  picture: string;
+  picture?: string;
   href: string;
   width?: number;
+  icon?: IconType;
 };
 
 export type TIcons = {
   width?: string;
   height?: string;
-  viewBox? : string;
+  viewBox?: string;
   fill?: string;
 };
 

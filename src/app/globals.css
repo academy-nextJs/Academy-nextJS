@@ -28,6 +28,10 @@
     --color-Black : #1C1C1C;
   }
 
+  body {
+    overflow-x: hidden !important;
+  }
+
   @font-face {
     font-family: Peyda Thin;
     src: local("Peyda"), url("../assets/Fonts/PeydaWeb-Thin.woff2"),

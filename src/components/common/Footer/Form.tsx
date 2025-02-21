@@ -74,7 +74,7 @@ export default function Form({ variant }: IProp) {
         onChange={formik.handleChange}
       />
       <Textarea
-        className="w-full font-Peyda-400 !text-xl -mt-6"
+        className="w-full font-Peyda-400 !text-xl md:-mt-6"
         label="پیام شما :"
         labelPlacement="outside"
         placeholder="..."
