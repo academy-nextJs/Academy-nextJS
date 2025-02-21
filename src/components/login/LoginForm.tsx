@@ -77,7 +77,7 @@ const LoginForm = () => {
         color="green"
         size="full"
         height="26px"
-        ClassName="!py-5 gap-3 !text-[#232323] mt-12 !rounded-xl"
+        className="!py-5 gap-3 !text-[#232323] mt-12 !rounded-xl"
         endContent={<MdKeyboardArrowLeft size={18} />}
       >
         ورود به حساب کاربری

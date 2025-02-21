@@ -1,3 +1,4 @@
+
 import AboutUs from "@/components/landing/about";
 import BuyProperty from "@/components/landing/buy-property";
 import Comment from "@/components/landing/comment";
@@ -8,6 +9,7 @@ import NewestEntertainmentAreas from "@/components/landing/newest-entertainment"
 
 export default function Home() {
   return (
+
     <div className="w-full flex flex-wrap">
       {/* <p className="font-Peyda-900"> سلام </p>  */}
       {/* <Hero /> */}
@@ -29,6 +31,7 @@ export default function Home() {
         <CircleShadow color="#7569FF" opacity="0.3" top="900px" right="-86px" />
       </Holder>
       <Comment />
+
     </div>
   );
 }
