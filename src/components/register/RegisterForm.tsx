@@ -25,9 +25,9 @@ const RegisterForm = () => {
     console.log(isRegisterWithNumber);
     return (
         <form onSubmit={formik.handleSubmit}>
-            <div className="flex gap-2 justify-between items-center">
+            <div className="flex max-sm:flex-col gap-2 justify-between items-center">
                 <Input
-                    className="max-md:w-full w-[47%]"
+                    className="max-sm:w-full w-[47%]"
                     label="شماره تماس:"
                     placeholder="مثال : 09116918744"
                     variant="bordered"
@@ -48,7 +48,7 @@ const RegisterForm = () => {
                 />
                 یا
                 <Input
-                    className="max-md:w-full w-[47%]"
+                    className="max-sm:w-full w-[47%]"
                     type="email"
                     label="ایمیل شما:"
                     placeholder="مثال : dakjsbd@email.com"

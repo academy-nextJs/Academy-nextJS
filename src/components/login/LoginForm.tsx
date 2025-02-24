@@ -24,12 +24,11 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className="flex gap-2 justify-between items-center">
+      <div className="flex max-sm:flex-col gap-y-8 gap-2 justify-between items-center">
         <Input
-          className="max-md:w-full w-[47%]"
+          className="max-md:w-full sm:w-[47%]"
           type="email"
           label="ایمیل شما:"
-          // labelPlacement="outside"
           placeholder="مثال : dakjsbd@email.com"
           variant="bordered"
           classNames={{
@@ -37,31 +36,26 @@ const LoginForm = () => {
           }}
           id="Email"
           name="Email"
-          value={formik.values.Email}
+          defaultValue={formik.values.Email}
           onChange={formik.handleChange}
         />
         <Input
-          className="max-md:w-full  w-[47%]"
+          className="max-md:w-full  sm:w-[47%]"
           label="کلمه عبور:"
+          placeholder="کلمه عبور را وارد کنید"
           endContent={
-            <button
-              aria-label=""
-              className="focus:outline-none"
-              type="button"
-              onClick={toggleVisibility}
-            >
+            <button type="button" onClick={toggleVisibility}>
               {isVisible ? <PiEyeLight size={27} /> : <PiEyeSlash size={27} />}
             </button>
           }
           classNames={{
-            label: `label-input px-2 !-top-2 !bg-base`,
+            label: `label-input px-2 !top-0 !bg-base`,
           }}
-          // labelPlacement="outside"
           type={isVisible ? "text" : "password"}
           variant="bordered"
           id="Password"
           name="Password"
-          value={formik.values.Password}
+          defaultValue={formik.values.Password}
           onChange={formik.handleChange}
         />
       </div>
