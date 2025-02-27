@@ -1,4 +1,4 @@
-import Chip from "@/components/common/Chip";
+import Chip from "@/components/common/Chip/SectionChip";
 import Card from "./Card";
 
 export default function AboutUs() {
@@ -56,7 +56,7 @@ export default function AboutUs() {
           height={225}
           classNames={{
             base: "col-span-1 row-span-1 max-[1462px]:!w-full",
-            icon: "!top-0"
+            icon: "!top-0",
           }}
           icon="/cup.png"
           statistics="+10"
