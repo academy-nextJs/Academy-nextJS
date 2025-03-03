@@ -24,7 +24,7 @@ const HouseReserveListItem = ({
 
       }}>
       {
-        selectedItem === data ? <SelectedHouseReserveListItemMain selectedItem={selectedItem}  data={data} /> : <HouseReserveListItemMain data={data} />
+        selectedItem === data ? <SelectedHouseReserveListItemMain data={data} /> : <HouseReserveListItemMain data={data} />
       }
 
     </div>

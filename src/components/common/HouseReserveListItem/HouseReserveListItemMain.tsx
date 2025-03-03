@@ -48,7 +48,7 @@ const HouseReserveListItemMain = ({ data }: { data: HouseReserveListType }) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 items-end">
+      <div className="flex flex-col gap-4 items-end justify-between">
         <div className="flex flex-nowrap gap-3 justify-end ite ms-center">
           <span className="font-Peyda-600 text-gray relative">
             {SeparationPrice(`${Math.ceil((+data.price * 100) / 85)} ت`)}

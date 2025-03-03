@@ -7,16 +7,14 @@ import { FaHotel } from "react-icons/fa6";
 
 const SelectedHouseReserveListItemMain = ({
   data,
-  selectedItem,
 }: {
   data: HouseReserveListType;
-  selectedItem: HouseReserveListType | undefined;
 }) => {
   return (
     <>
       <div className="flex gap-4 flex-nowrap items-center transition-all ">
 
-          <File background="#393939" stroke={selectedItem === data ? "#8CFF45" : "#393939"} />
+          <File background="#393939" stroke="#8CFF45" />
 
         <div className="h-full flex flex-col gap-4 items-start ">
           <Button
@@ -54,7 +52,7 @@ const SelectedHouseReserveListItemMain = ({
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 items-end">
+      <div className="flex flex-col gap-4 items-end justify-between">
         <div className="flex flex-nowrap gap-3 justify-end ite ms-center">
           <span className="font-Peyda-600 text-gray relative">
             {SeparationPrice(`${Math.ceil((+data.price * 100) / 85)} ت`)}
@@ -77,7 +75,7 @@ const SelectedHouseReserveListItemMain = ({
         <Button
           variant="solid"
           color="green"
-          className=" mt-1 px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
+          className=" mt-1 !border-2 !border-green px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
           radius="xl"
         >
           <FaHotel />{" "}
