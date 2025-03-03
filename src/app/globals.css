@@ -102,3 +102,8 @@
     border-radius: 2px;
   }
 }
+@layer utilities {
+  .container{
+    @apply mx-auto;
+  }
+}
