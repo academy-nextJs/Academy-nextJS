@@ -33,10 +33,13 @@ export default {
       borderColor: {
         gray: "var(--color-border-gray)",
         garyInGreen: "var(--color-gray)",
+        graySecondary: "var(--color-secondary-gray)",
+        lightGray: "var(--color-text-gray)",
         white: "var(--color-white)",
         purple: "var(--color-purple)",
         red: "var(--color-red)",
         green: "var(--color-green)",
+        
       },
       fontFamily: {
         "Peyda-100": "Peyda Thin",
