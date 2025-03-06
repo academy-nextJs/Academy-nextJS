@@ -1,12 +1,12 @@
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL;
+const baseURL = process.env.Base_URL;
 
 const instance = axios.create({
   baseURL: baseURL,
   headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
+    Authorization: ``,
   },
 });
 
@@ -20,5 +20,6 @@ const onError = (error: AxiosError): Promise<never> => {
 };
 
 instance.interceptors.response.use(onSuccess, onError);
+
 
 export default instance;
