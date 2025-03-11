@@ -15,7 +15,7 @@ const TitleSection: FC<IProp> = ({
   className,
 }) => {
   return (
-    <div className={`flex gap-x-4 py-2 w-fit max-lg:mx-auto ${className}`}>
+    <div className={`flex gap-x-4 py-2 sm:px-10 w-fit max-lg:mx-auto ${className}`}>
       <h5>{text}</h5>
       <TitleIcon fill={colorIcon} height={iconHeight} />
     </div>

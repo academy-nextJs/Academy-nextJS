@@ -1,8 +1,9 @@
+import SignupWraper from '@/components/register'
 import React from 'react'
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <SignupWraper />
   )
 }
 

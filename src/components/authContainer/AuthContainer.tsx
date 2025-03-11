@@ -14,7 +14,7 @@ interface IProps {
 
 const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
   return (
-    <div className="lg:flex gap-3 justify-between items-center lg:mb-60 mb-20">
+    <div className="lg:flex gap-3 justify-between items-center sm:px-10 px-4 lg:mb-60 mb-20">
       {/* title page */}
       <div className="flex flex-col gap-7 lg:w-2/5 text-white max-lg:text-center">
         <h1 className="text-4xl max-sm:text-center">
@@ -22,12 +22,12 @@ const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
           <span className="font-Peyda-600 ">{titleBold}</span>
         </h1>
         <p>{desc}</p>
-        <CustomTab buttonArray={AuthTab} color="success"/>
+        <CustomTab buttonArray={AuthTab} color="success" />
         <Button
           color="green"
           size="full"
           height="26px"
-          ClassName="!py-5 gap-3 !text-black !rounded-xl"
+          className="!py-5 gap-3 !text-black !rounded-xl"
           startContent={<FcGoogle size={25} />}
         >
           ورود با حساب گوگل
@@ -40,7 +40,7 @@ const AuthContainer: FC<IProps> = ({ title, titleBold, desc, children }) => {
         {/* form box */}
         <div>{children}</div>
       </div>
-      <WinnerBox/>
+      <WinnerBox />
     </div>
   );
 };
