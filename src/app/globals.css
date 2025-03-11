@@ -116,4 +116,13 @@
     color: #ffffff;
     background-color: transparent !important;
   }
+  .swiper-pagination-custom {
+    background-color: #232323;
+    width: 144px !important;
+    height: 32px;
+    border-radius: 24px;
+    margin-bottom: 16px;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
 }
