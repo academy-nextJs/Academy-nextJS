@@ -27,7 +27,7 @@ const Panel = () => {
 
   const ButtonSimilarProps: Omit<ButtonProps, "children"> = {
     size: "full",
-    ClassName:
+    className:
       "sm:!h-8 font-Peyda-600 sm:text-[13px] !py-2 text-[#363636] shadow-none rounded-xl",
   };
 

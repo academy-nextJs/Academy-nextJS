@@ -44,10 +44,10 @@ const GalleryWrapper: FC<GalleryWrapperProps> = (props) => {
           {props.title}
         </h1>
         <div className="flex gap-x-4 max-sm:hidden">
-          <Button ClassName="!w-10 !h-10 !p-0 bg-gray rounded-xl flex justify-center items-center">
+          <Button className="!w-10 !h-10 !p-0 bg-gray rounded-xl flex justify-center items-center">
             <Share2Icon />
           </Button>
-          <Button ClassName="!w-10 !h-10 !p-0 bg-gray rounded-xl flex justify-center items-center">
+          <Button className="!w-10 !h-10 !p-0 bg-gray rounded-xl flex justify-center items-center">
             <HeartIcon />
           </Button>
         </div>
