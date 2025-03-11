@@ -47,7 +47,7 @@ const TabSection = () => {
             />
           }
         >
-          <Comment />
+          <Comment view="reserve" />
           <div className="w-[999px] h-[540px] mt-10 mb-[156px]">
             <Slider
               slidesPerView={2}
