@@ -26,7 +26,7 @@ const BORDERS = {
   red: "text-red border-red",
 };
 
-type ButtonProps = {
+export type ButtonProps = {
   color?: keyof typeof COLORS;
   size?: keyof typeof SIZES;
   width?: string;

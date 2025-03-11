@@ -8,6 +8,6 @@ export const UnitPrice = (price: number) => {
 
 export const SeparationPrice = (price: string) => {
   price = String(price);
-  const CategorizedPrice = price.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const CategorizedPrice = price.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   return CategorizedPrice;
 };
