@@ -1,76 +1,72 @@
+import { StarIcon } from "@/core/icon/icons";
+import { useCreateComment } from "@/utils/service/api/post/CreateComment";
 import { Button, Input, Slider } from "@heroui/react";
 import { useFormik } from "formik";
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 import { RiArrowDropLeftLine } from "react-icons/ri";
 
-const Comment = () => {
+interface CommentProps {
+  view: "rent" | "reserve";
+  house_id: string;
+}
+
+const Comment: FC<CommentProps> = ({ view, house_id }) => {
+  const initialValues = {
+    title: "",
+    caption: "",
+    rating: 1,
+  };
+  const { mutate } = useCreateComment();
+
   // Handle Formik
   const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      massage: "",
-      score: 1,
-    },
+    initialValues: initialValues,
     onSubmit: (values) => {
-      console.log(values);
+      mutate({ ...values, house_id: house_id });
     },
   });
 
+  const InputWidth =
+    view == "rent" ? "w-[212px] min-w-[424px]" : "w-[372px] min-w-[372px]";
+
   return (
     <Fragment>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit} className="w-full">
         <div className="w-full flex gap-5 items-end mb-10">
           <Input
-            className="w-[186px] font-Peyda-400"
-            label="نام و نام خانوادگی :"
+            className={`font-Peyda-400 ${InputWidth}`}
+            label="تایتل :"
             labelPlacement="outside"
-            placeholder=" "
             variant="bordered"
+            placeholder="تایتل"
             classNames={{
               label: `label-input !bg-base text-white`,
               input: "text-white",
               inputWrapper: `inputWrapper-input !text-black border-[#AAAAAA] h-[53px]`,
             }}
-            id="name"
-            name="name"
-            value={formik.values.name}
+            id="title"
+            name="title"
+            value={formik.values.title}
             onChange={formik.handleChange}
           />
-          <Input
-            className="w-[186px] font-Peyda-400"
-            label="ایمیل :"
-            labelPlacement="outside"
-            variant="bordered"
-            placeholder=" "
-            classNames={{
-              label: `label-input !bg-base text-white`,
-              input: "text-white",
-              inputWrapper: `inputWrapper-input !text-black border-[#AAAAAA] h-[53px]`,
-            }}
-            id="email"
-            name="email"
-            value={formik.values.email}
-            onChange={formik.handleChange}
-          />
-          <div className="h-[53px] relative border-2 border-[#AAAAAA] rounded-2xl pt-[18px] pb-[10px] pr-6 pl-[88px]">
+          <div className="w-full h-[53px] relative border-2 border-[#AAAAAA] rounded-2xl pt-[18px] pb-[10px] pr-6 flex">
             <div className="absolute -top-3 bg-base px-2 text-[#AAAAAA] font-Peyda-500">
               امتیاز شما :
             </div>
             <Slider
               dir="ltr"
-              className="w-[475px]"
+              className="w-full"
               color="foreground"
               maxValue={5}
               minValue={1}
               showSteps={true}
               size="md"
-              step={1}
-              id="score"
-              name="score"
-              aria-label="score-slider"
-              defaultValue={formik.values.score}
-              onChange={(ev) => formik.setFieldValue("score", ev)}
+              step={0.5}
+              id="rating"
+              name="rating"
+              aria-label="rating-slider"
+              defaultValue={formik.values.rating}
+              onChange={(ev) => formik.setFieldValue("rating", ev)}
               classNames={{
                 step: "bg-white w-[1px] h-full rounded-none",
                 thumb:
@@ -79,23 +75,31 @@ const Comment = () => {
                 filler: "bg-gradient-to-r to-[#7569FF] from-[#E2DFFF]",
               }}
             />
+            <div className="w-[88px] flex justify-center gap-x-[6px] items-center">
+              <span className="font-Peyda-Numeric">{formik.values.rating}</span>
+              <StarIcon fill="#fff" />
+            </div>
           </div>
         </div>
-        <div className="w-full flex items-end gap-8">
+        <div
+          className={`w-full flex items-end ${
+            view == "rent" ? "gap-8" : "gap-16"
+          }`}
+        >
           <Input
-            className="w-[856px] font-Peyda-400"
-            label="پیام شما : :"
+            className="w-full font-Peyda-400"
+            label="پیام شما :"
             labelPlacement="outside"
             variant="bordered"
-            placeholder=" "
+            placeholder="پیام"
             classNames={{
               label: `label-input !bg-base text-white`,
               input: "text-white",
               inputWrapper: `inputWrapper-input !text-black border-[#AAAAAA] h-[53px]`,
             }}
-            id="massage"
-            name="massage"
-            value={formik.values.massage}
+            id="caption"
+            name="caption"
+            value={formik.values.caption}
             onChange={formik.handleChange}
           />
           <Button
