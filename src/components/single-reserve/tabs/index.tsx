@@ -1,16 +1,18 @@
 "use client";
-import Comment from "@/components/common/Comment";
+import CommentWrapper from "@/components/common/Comment";
 import HouseFacilities from "@/components/common/HouseFacilities";
 import CustomTabs from "@/components/common/Tabs";
 import TabTitle from "@/components/common/Tabs/TabTitle";
+import { TabSectionProps } from "@/components/common/Tabs/types";
 import { CommentIcon, DocumentIcon, FacilitiesIcon } from "@/core/icon/icons";
 import { Tab } from "@heroui/react";
+import { FC } from "react";
 import About from "./About";
-import CardComment from "@/components/common/Comment/Card";
-import { SwiperSlide } from "swiper/react";
-import Slider from "@/components/common/Slider";
 
-const TabSection = () => {
+const TabSection: FC<Omit<TabSectionProps, "location">> = ({
+  categories,
+  house_id,
+}) => {
   return (
     <div className="w-[999px] flex flex-wrap gap-y-8 h-fit">
       <CustomTabs>
@@ -36,7 +38,9 @@ const TabSection = () => {
           }
           className="flex flex-wrap gap-x-[17px] gap-y-8"
         >
-          <HouseFacilities K="سن بنا" V="نوساز" />
+          {categories?.map((item) => (
+            <HouseFacilities key={item.id} K="سن بنا" V={item.name} />
+          ))}
         </Tab>
         <Tab
           key="HouseComment"
@@ -47,53 +51,7 @@ const TabSection = () => {
             />
           }
         >
-          <Comment view="reserve" />
-          <div className="w-[999px] h-[540px] mt-10 mb-[156px]">
-            <Slider
-              slidesPerView={2}
-              spaceBetween={24}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-              }}
-              className="h-full"
-              loop
-            >
-              <SwiperSlide>
-                <CardComment
-                  view="writeonly"
-                  date="12 مرداد - 1401 / 12:33"
-                  message="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گ"
-                  name="محمد رضا ساداتی"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardComment
-                  view="writeonly"
-                  date="12 مرداد - 1401 / 12:33"
-                  message="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گ"
-                  name="محمد رضا ساداتی"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardComment
-                  view="writeonly"
-                  date="12 مرداد - 1401 / 12:33"
-                  message="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گ"
-                  name="محمد رضا ساداتی"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardComment
-                  view="writeonly"
-                  date="12 مرداد - 1401 / 12:33"
-                  message="لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گ"
-                  name="محمد رضا ساداتی"
-                />
-              </SwiperSlide>
-            </Slider>
-          </div>
+          <CommentWrapper house_id={house_id} width="999px" height="620px" />
         </Tab>
       </CustomTabs>
     </div>

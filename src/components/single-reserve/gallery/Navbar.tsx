@@ -1,8 +1,9 @@
 import { CopyIcon, LocationIcon, ShareIcon, StarIcon } from "@/core/icon/icons";
 import { FC, Fragment } from "react";
 import { GalleryWrapperProps } from ".";
+import Button from "@/components/common/Button/Button";
 
-const Navbar: FC<GalleryWrapperProps> = ({ address, star, title }) => {
+const Navbar: FC<Omit<GalleryWrapperProps, "pictures">> = ({ address, star, title }) => {
   return (
     <Fragment>
       <h1 className="w-full text-4xl font-Peyda-600">{title}</h1>
@@ -21,12 +22,12 @@ const Navbar: FC<GalleryWrapperProps> = ({ address, star, title }) => {
             ستاره
           </div>
           |
-          <div className="w-10 h-10 bg-gray rounded-xl flex justify-center items-center">
+          <Button className="!w-10 !h-10 !p-0 bg-gray rounded-xl flex justify-center items-center">
             <CopyIcon />
-          </div>
-          <div className="w-10 h-10 bg-green rounded-xl flex justify-center items-center">
+          </Button>
+          <Button className="!w-10 !h-10 !p-0 bg-green rounded-xl flex justify-center items-center">
             <ShareIcon />
-          </div>
+          </Button>
         </div>
       </div>
     </Fragment>

@@ -1,7 +1,7 @@
 "use client";
 import CustomInputs from "@/components/common/CustomInputs";
-import { NegativeIcon, PositiveIcon } from "@/core/icon/icons";
-import { useEffect, useState } from "react";
+import CalculateDaysBetweenDates from "@/utils/calculate-difference";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/persian_fa";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
@@ -9,9 +9,17 @@ import { DateObject } from "react-multi-date-picker";
 import "react-multi-date-picker/styles/backgrounds/bg-dark.css";
 import CustomDatePicker from "./CustomDatePicker";
 
-const DateSection = () => {
-  const passengersButtonStyle =
-    "w-6 h-6 bg-green rounded-[4px] flex items-center justify-center";
+interface DateSectionProps {
+  setReserveDate: Dispatch<SetStateAction<[DateObject, DateObject] | null>>;
+  duration: number;
+  setDuration: Dispatch<SetStateAction<number>>;
+}
+
+const DateSection: FC<DateSectionProps> = ({
+  setReserveDate,
+  duration,
+  setDuration,
+}) => {
   // State
   const [startDate, setStartDate] = useState<DateObject | null>(
     new DateObject({ calendar: persian, locale: persian_fa })
@@ -19,19 +27,11 @@ const DateSection = () => {
   const [endDate, setEndDate] = useState<DateObject | null>(
     new DateObject({ calendar: persian, locale: persian_fa }).add(1, "day")
   );
-  const [duration, setDuration] = useState<number>(0);
-  const [passengers, setPassengers] = useState<number>(1);
 
-  const handlePassengers = (section: "negative" | "positive") => {
-    if (section == "positive") setPassengers((prev) => ++prev);
-    else if (section == "negative" && passengers > 1)
-      setPassengers((prev) => --prev);
-  };
-
-  // Calculate Difference date
   useEffect(() => {
     if (startDate && endDate) {
-      setDuration(endDate.dayOfYear - startDate.dayOfYear);
+      setDuration(CalculateDaysBetweenDates(endDate, startDate));
+      setReserveDate([startDate, endDate]);
     }
   }, [startDate, endDate]);
 
@@ -59,7 +59,6 @@ const DateSection = () => {
     <div className="flex flex-wrap gap-y-8 w-full mt-6">
       <CustomInputs tag="تاریخ رفت">
         <CustomDatePicker
-          section="start"
           date={startDate}
           value={startDate}
           onChange={setStartDate}
@@ -68,35 +67,10 @@ const DateSection = () => {
       </CustomInputs>
       <CustomInputs tag="تاریخ برگشت">
         <CustomDatePicker
-          section="end"
           date={endDate}
           value={endDate}
           onChange={setEndDate}
         />
-      </CustomInputs>
-      <CustomInputs tag="تعدا مسافران" className="h-[59px]">
-        <div className="font-Peyda-Numeric w-full h-full flex justify-between items-center pr-[6px]">
-          <span className="text-[#B3B3B3]">{passengers} نفر</span>
-          <div className="flex gap-6 items-center">
-            <button
-              className={passengersButtonStyle}
-              onClick={() => {
-                handlePassengers("negative");
-              }}
-            >
-              <NegativeIcon />
-            </button>
-            <span className="text-white">{passengers}</span>
-            <button
-              className={passengersButtonStyle}
-              onClick={() => {
-                handlePassengers("positive");
-              }}
-            >
-              <PositiveIcon />
-            </button>
-          </div>
-        </div>
       </CustomInputs>
     </div>
   );

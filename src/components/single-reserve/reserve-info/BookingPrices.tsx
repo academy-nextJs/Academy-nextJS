@@ -1,21 +1,27 @@
 import PanelChip from "@/components/common/Chip/PanelChip";
 import { NoteIcon } from "@/core/icon/icons";
 import { SeparationPrice } from "@/utils/SeparationPrice";
+import { FC } from "react";
 
-const BookingPrices = ({ night }: { night: number }) => {
-  const BookingPricesItems = () => {
+interface BookingPricesProps {
+  night: number,
+  price: number
+}
+
+const BookingPrices:FC<BookingPricesProps> = ({ night, price }) => {
+  const BookingPricesItems = ({duration}: {duration: number}) => {
     return (
       <li className="w-full flex justify-between font-Peyda-700">
         <div className="flex items-center text-[#AAAAAA]">
           <NoteIcon />
-          <span className="mr-2 font-Peyda-Numeric">{night}</span>
+          <span className="mr-2 font-Peyda-Numeric">{duration}</span>
           شب*
           <span className="font-Peyda-Numeric">
-            {SeparationPrice("17000000")} ت
+            {SeparationPrice(price)} ت
           </span>
         </div>
         <span className="text-white font-Peyda-Numeric">
-          {SeparationPrice("18000000")} ت
+          {SeparationPrice(price * duration)} ت
         </span>
       </li>
     );
@@ -28,9 +34,9 @@ const BookingPrices = ({ night }: { night: number }) => {
         className="w-[178px] h-9 top-0 left-[50%] translate-x-[-50%] flex items-center justify-center gap-x-2 rounded-b-[32px]"
       />
       <ul className="py-6 flex flex-wrap gap-y-5">
-        <BookingPricesItems />
-        <BookingPricesItems />
-        <BookingPricesItems />
+        <BookingPricesItems duration={1} />
+        <BookingPricesItems duration={night > 3 ? night : 5} />
+        <BookingPricesItems duration={night > 3 ? night * 2 : 10} />
       </ul>
     </div>
   );

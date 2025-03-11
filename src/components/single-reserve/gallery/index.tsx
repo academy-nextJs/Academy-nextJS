@@ -6,13 +6,14 @@ export interface GalleryWrapperProps {
   title: string;
   star: number | string;
   address: string;
+  pictures: string[]
 }
 
-const GalleryWrapper: FC<GalleryWrapperProps> = ({ title, star, address }) => {
+const GalleryWrapper: FC<GalleryWrapperProps> = ({ title, star, address, pictures }) => {
   return (
     <div className="w-full text-white mt-6 flex flex-wrap gap-y-6">
       <Navbar address={address} star={star} title={title} />
-      <Gallery />
+      <Gallery pictures={pictures} />
     </div>
   );
 };
