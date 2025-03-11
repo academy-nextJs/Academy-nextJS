@@ -3,12 +3,14 @@ import Link from "next/link";
 import { FC } from "react";
 import { RiArrowDropLeftLine } from "react-icons/ri";
 import SliderSection from "./SliderSection";
+import { GetSingleHouseType } from "@/core/models/house.models";
 
 interface SimilarAdsProps {
   href: string;
+  data: GetSingleHouseType[]
 }
 
-const SimilarAds: FC<SimilarAdsProps> = ({ href }) => {
+const SimilarAds: FC<SimilarAdsProps> = ({ href, data }) => {
   return (
     <div className="w-full mt-10 mb-[156px] relative">
       <div className="w-full h-11 mb-12 px-4 py-3 rounded-xl bg-gray flex items-center justify-between text-white font-Peyda-500">
@@ -21,8 +23,8 @@ const SimilarAds: FC<SimilarAdsProps> = ({ href }) => {
           <RiArrowDropLeftLine size={25} className="text-green" />
         </Link>
       </div>
-      <div className="h-[460px] w-full max-w-[1376px]">
-        <SliderSection />
+      <div className="h-[480px] w-full max-w-[1376px]">
+        <SliderSection data={data} />
       </div>
     </div>
   );

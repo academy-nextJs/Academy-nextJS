@@ -2,8 +2,9 @@
 import { SwiperSlide } from "swiper/react";
 import Slider from "../Slider";
 import GridCardT2 from "../CardItems/cards/GridCardT2";
+import { GetSingleHouseType } from "@/core/models/house.models";
 
-const SliderSection = () => {
+const SliderSection = ({ data }: { data: GetSingleHouseType[] }) => {
   return (
     <Slider
       slidesPerView={4}
@@ -30,81 +31,23 @@ const SliderSection = () => {
         },
       }}
     >
-      <SwiperSlide>
-        <GridCardT2
-          href="/"
-          score="4.5"
-          title="آپارتمان لوکس زعفرانیه"
-          bathroom={2}
-          isRent={false}
-          room={4}
-          yard
-          price="5000000"
-          location="گیلان ، رشت"
-          garage={1}
-          describeType="pipe"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <GridCardT2
-          href="/"
-          score="4.5"
-          title="آپارتمان لوکس زعفرانیه"
-          bathroom={2}
-          isRent={false}
-          room={4}
-          yard
-          price="5000000"
-          location="گیلان ، رشت"
-          garage={1}
-          describeType="pipe"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <GridCardT2
-          href="/"
-          score="4.5"
-          title="آپارتمان لوکس زعفرانیه"
-          bathroom={2}
-          isRent={false}
-          room={4}
-          yard
-          price="5000000"
-          location="گیلان ، رشت"
-          garage={1}
-          describeType="pipe"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <GridCardT2
-          href="/"
-          score="4.5"
-          title="آپارتمان لوکس زعفرانیه"
-          bathroom={2}
-          isRent={false}
-          room={4}
-          yard
-          price="5000000"
-          location="گیلان ، رشت"
-          garage={1}
-          describeType="pipe"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <GridCardT2
-          href="/"
-          score="4.5"
-          title="آپارتمان لوکس زعفرانیه"
-          bathroom={2}
-          isRent={false}
-          room={4}
-          yard
-          price="5000000"
-          location="گیلان ، رشت"
-          garage={1}
-          describeType="pipe"
-        />
-      </SwiperSlide>
+      {data?.map((item) => (
+        <SwiperSlide key={item.id}>
+          <GridCardT2
+            href={`house-rent/${item.id}`}
+            score={item.rate}
+            title={item.title}
+            bathroom={item.bathrooms}
+            isRent={false}
+            room={item.rooms}
+            yard
+            price={item.price}
+            location={item.address}
+            garage={item.parking}
+            describeType="pipe"
+          />
+        </SwiperSlide>
+      ))}
     </Slider>
   );
 };
