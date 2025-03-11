@@ -3,17 +3,9 @@ import { Score } from "../../CardItems/components/common-grid";
 import FileContainer, { FileContainerProps } from "../../FileContainer";
 import CardFooter from "./CardFooter";
 import { FC } from "react";
+import { CommentCardProps } from "../types";
 
-interface CardCommentProps {
-  view: "readonly" | "writeonly";
-  caption: string;
-  title: string;
-  name: string;
-  date: string;
-  score: string
-}
-
-const CardComment: FC<CardCommentProps & Partial<FileContainerProps>> = (
+const CardComment: FC<CommentCardProps & Partial<FileContainerProps>> = (
   props
 ) => {
   const footer = (
@@ -33,7 +25,6 @@ const CardComment: FC<CardCommentProps & Partial<FileContainerProps>> = (
       label={<Score score={props.score} />}
       labelHeight="30px"
       labelWidth="90px"
-      // width="487px"
       classNames={{
         base: "w-[full] flex flex-wrap p-4 pt-[32px] text-white font-Peyda-400",
         innerLabel: "!p-3 flex justify-center items-center",
@@ -66,7 +57,9 @@ const CardComment: FC<CardCommentProps & Partial<FileContainerProps>> = (
                 {props.date}
               </span>
             </div>
-            <p className="w-full font-Peyda-400 line-clamp-2 h-[72px] mt-4 leading-9 text-wrap">” {props.caption} “</p>
+            <p className="w-full font-Peyda-400 line-clamp-2 h-[72px] mt-4 leading-9 text-wrap">
+              ” {props.caption} “
+            </p>
             {footer}
           </div>
         </>

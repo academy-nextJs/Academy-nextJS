@@ -1,6 +1,6 @@
 import { FC, Fragment, useState } from "react";
-import { TabSectionProps } from ".";
 import ShowMore from "./ShowMore";
+import { TabSectionProps } from "@/components/common/Tabs/types";
 
 const LocationSection: FC<Pick<TabSectionProps, "location">> = ({
   location,

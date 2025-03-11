@@ -1,15 +1,9 @@
 import { DateIcon } from "@/core/icon/icons";
 import { FC } from "react";
 import { RiArrowDropLeftLine } from "react-icons/ri";
+import { CommentCardFooterProps } from "../types";
 
-interface CardFooterProps {
-  name: string;
-  date: string;
-  holderStyles?: string;
-  view: "readonly" | "writeonly";
-}
-
-const CardFooter: FC<CardFooterProps> = ({
+const CardFooter: FC<CommentCardFooterProps> = ({
   name,
   date,
   holderStyles,

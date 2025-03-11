@@ -1,27 +1,25 @@
 "use client";
+import CommentWrapper from "@/components/common/Comment";
 import HouseFacilities from "@/components/common/HouseFacilities";
 import CustomTabs from "@/components/common/Tabs";
 import TabTitle from "@/components/common/Tabs/TabTitle";
+import { TabSectionProps } from "@/components/common/Tabs/types";
 import {
   CommentIcon,
   Document2Icon,
   DocumentIcon,
   LocationIcon,
 } from "@/core/icon/icons";
-import { CategoriesType, LocationsType } from "@/core/models/house.models";
 import { Tab } from "@heroui/react";
 import { FC } from "react";
-import CommentSection from "./CommentSection";
 import HouseAbout from "./HouseAbout";
 import LocationSection from "./LocationSection";
 
-export interface TabSectionProps {
-  location: LocationsType;
-  categories: CategoriesType[];
-  house_id: string;
-}
-
-const TabSection: FC<TabSectionProps> = ({ location, categories, house_id }) => {
+const TabSection: FC<TabSectionProps> = ({
+  location,
+  categories,
+  house_id,
+}) => {
   return (
     <div className="w-full flex flex-wrap gap-y-8 h-fit mt-[69px]">
       <CustomTabs>
@@ -73,7 +71,7 @@ const TabSection: FC<TabSectionProps> = ({ location, categories, house_id }) => 
           }
           className="font-Peyda-500 flex flex-wrap gap-y-3 text-white"
         >
-          <CommentSection house_id={house_id} />
+          <CommentWrapper house_id={house_id} height="620px" width="1376px" />
         </Tab>
       </CustomTabs>
     </div>

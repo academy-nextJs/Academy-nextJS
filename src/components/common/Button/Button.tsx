@@ -37,6 +37,7 @@ export type ButtonProps = {
   children: ReactNode;
   className?: string;
   variant?: "bordered" | "solid";
+  onClick: () => void
 };
 
 export default function Button({
@@ -50,6 +51,7 @@ export default function Button({
   children,
   className,
   isMagnetic,
+  onClick
 }: ButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -83,6 +85,8 @@ export default function Button({
     setTimeout(() => {
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
     }, 600);
+
+    onClick()
   };
 
   return (

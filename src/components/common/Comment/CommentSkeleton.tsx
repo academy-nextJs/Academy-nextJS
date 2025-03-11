@@ -1,7 +1,7 @@
 import { Skeleton } from "@heroui/react";
-import FileContainer from "../../FileContainer";
+import FileContainer from "../FileContainer";
 
-export default function CommentCardSkeleton() {
+export default function CommentSkeleton() {
   return (
     <FileContainer
       background="#393939"
@@ -10,7 +10,6 @@ export default function CommentCardSkeleton() {
       label={<Skeleton className="w-[67px] h-[32px] rounded-lg"></Skeleton>}
       labelHeight="30px"
       labelWidth="100px"
-      width="678px"
       classNames={{
         base: "w-[full] flex flex-wrap p-4 pt-[32px] text-white font-Peyda-400",
         innerLabel: "!p-3 flex justify-center items-center",
