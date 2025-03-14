@@ -9,7 +9,7 @@ interface IProps {
 
 const ReservationDate: FC<IProps> = ({ variant, date }) => {
   return (
-    <div className="text-gray flex gap-1 items-center mt-3">
+    <div className="text-gray flex gap-1 items-center mt-3 w-fit max-lg:mx-auto">
       {variant === "startDate" ? (
         <TbCalendarStats className="size-4 ml-1" />
       ) : (

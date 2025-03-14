@@ -14,13 +14,13 @@ const StepTitle: FC<THouseBookingSteps> = ({ id, title, icon, last }) => {
   return (
     <div
       onClick={handleReturnToStepBefore}
-      className={`flex  !w-fit gap-3 items-center text-gray cursor-pointer ${
+      className={`flex  !md:w-fit gap-3 items-center text-gray md:text-[1.3vw] cursor-pointer  ${
         selected && "text-white"
-      } ${completed && "text-green"} ${last ? "" : "flex-grow"} `}
+      } ${completed && "text-green"} ${last ? "" : "!flex-grow"} `}
     >
       {/* Icon section */}
       <div
-        className={`border-2  p-2 rounded-full ${
+        className={`border-2 p-2 rounded-full ${
           completed
             ? "bg-green border-none"
             : selected
@@ -29,14 +29,13 @@ const StepTitle: FC<THouseBookingSteps> = ({ id, title, icon, last }) => {
         }`}
       >
         <icon.prototype.constructor
-          className=""
           size="15"
           color={selected ? "white" : completed ? "black" : "gray"}
         />
       </div>
-      <h1 className="font-Peyda-600 text-xl ">{title}</h1>
+      <h1 className="font-Peyda-600 max-md:w-48">{title}</h1>
       <hr
-        className={`w-2/5 inline-flex border-2 border-dashed ${
+        className={`md:w-2/5 sm:w-1/2 w-full inline-flex border-2 border-dashed ${
           completed
             ? "border-green"
             : selected
