@@ -15,7 +15,7 @@ export default {
       backgroundColor: {
         base: "var(--color-main)",
         green: "var(--color-green)",
-        gray: "var(--color-gray)",
+        gray: "var(--color-border-gray)",
         white: "var(--color-white)",
         graySecondary: "var(--color-secondary-gray)",
         purple: "var(--color-purple)",
