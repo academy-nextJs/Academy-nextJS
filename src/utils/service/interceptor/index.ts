@@ -5,9 +5,9 @@ const baseURL = process.env.Base_URL;
 
 const instance = axios.create({
   baseURL: baseURL,
-  headers: {
-    Authorization: ``,
-  },
+  // headers: {
+  //   Authorization: `Bearer ${localStorage.getItem("token")}`,
+  // },
 });
 
 const onSuccess = <T>(response: AxiosResponse<T>): T => {

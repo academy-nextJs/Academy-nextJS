@@ -15,7 +15,7 @@ interface ClassNames {
   coverHollow: string;
 }
 
-interface FileContainerProps {
+export interface FileContainerProps {
   children: ReactNode;
   background: string;
   radius: "sm" | "md" | "lg";
