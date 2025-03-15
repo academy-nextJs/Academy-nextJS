@@ -6,16 +6,21 @@ import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
 import Button from "../common/Button/Button";
 import { MdArrowBack, MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
+import { useLoginUser } from "@/utils/service/api/post/LoginUser";
+import { loginValidations } from "@/core/validations/Auth.Validations";
 
 const LoginForm = () => {
+  const { mutate } = useLoginUser();
   // Handle Formik
   const formik = useFormik({
     initialValues: {
-      Email: "",
-      Password: "",
+      email: "",
+      password: "",
     },
+    validationSchema: loginValidations,
     onSubmit: (value) => {
-      console.log(value);
+      // console.log(value);
+      mutate(value);
     },
   });
   // visible password
@@ -25,39 +30,57 @@ const LoginForm = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <div className="flex max-sm:flex-col gap-y-8 gap-2 justify-between items-center">
-        <Input
-          className="max-md:w-full sm:w-[47%]"
-          type="email"
-          label="ایمیل شما:"
-          placeholder="مثال : dakjsbd@email.com"
-          variant="bordered"
-          classNames={{
-            label: `label-input px-2 !top-0 !bg-base`,
-          }}
-          id="Email"
-          name="Email"
-          defaultValue={formik.values.Email}
-          onChange={formik.handleChange}
-        />
-        <Input
-          className="max-md:w-full  sm:w-[47%]"
-          label="کلمه عبور:"
-          placeholder="کلمه عبور را وارد کنید"
-          endContent={
-            <button type="button" onClick={toggleVisibility}>
-              {isVisible ? <PiEyeLight size={27} /> : <PiEyeSlash size={27} />}
-            </button>
-          }
-          classNames={{
-            label: `label-input px-2 !top-0 !bg-base`,
-          }}
-          type={isVisible ? "text" : "password"}
-          variant="bordered"
-          id="Password"
-          name="Password"
-          defaultValue={formik.values.Password}
-          onChange={formik.handleChange}
-        />
+        <div className="flex flex-col max-md:w-full sm:w-[47%] relative">
+          <Input
+            className=""
+            type="email"
+            label="ایمیل شما:"
+            placeholder="مثال : dakjsbd@email.com"
+            variant="bordered"
+            classNames={{
+              label: `label-input px-2 !top-0 !bg-base`,
+            }}
+            id="email"
+            name="email"
+            defaultValue={formik.values.email}
+            onChange={formik.handleChange}
+          />
+          {formik.touched.email && formik.errors.email ? (
+            <div className="text-red block absolute right-0 -bottom-7">
+              {formik.errors.email}
+            </div>
+          ) : null}
+        </div>
+        <div className="max-md:w-full  sm:w-[47%] relative">
+          <Input
+            className=""
+            label="کلمه عبور:"
+            placeholder="کلمه عبور را وارد کنید"
+            endContent={
+              <button type="button" onClick={toggleVisibility}>
+                {isVisible ? (
+                  <PiEyeLight size={27} />
+                ) : (
+                  <PiEyeSlash size={27} />
+                )}
+              </button>
+            }
+            classNames={{
+              label: `label-input px-2 !top-0 !bg-base`,
+            }}
+            type={isVisible ? "text" : "password"}
+            variant="bordered"
+            id="password"
+            name="password"
+            defaultValue={formik.values.password}
+            onChange={formik.handleChange}
+          />
+          {formik.touched.password && formik.errors.password ? (
+            <div className="text-red block absolute right-0 -bottom-7">
+              {formik.errors.password}
+            </div>
+          ) : null}
+        </div>
       </div>
       {/* forget password button */}
       <Link
