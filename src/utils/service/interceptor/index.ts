@@ -15,9 +15,7 @@ const onSuccess = <T>(response: AxiosResponse<T>): T => {
 
 const onError = (error: AxiosError): Promise<never> => {
   if (error.response) {
-    if (error.response?.status === 401) {
-      localStorage.removeItem("token");
-    }
+    // 
     if (error.response.status >= 404 && error.response.status < 500) {
       console.log("Client Error:" + error.response.status);
     }
