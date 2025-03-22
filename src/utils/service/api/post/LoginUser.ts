@@ -3,6 +3,7 @@ import { AxiosError, AxiosResponse } from "axios";
 import http from "../../interceptor";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
+import { setCookie } from "@/core/models/cookie/token-cookie";
 
 export const LoginUser = async (
   params: loginUserParams
@@ -17,9 +18,10 @@ export const useLoginUser = () => {
   return useMutation({
     mutationKey: ["LOGIN_USER"],
     mutationFn: LoginUser,
-    onSuccess: (response: AxiosResponse) => {
+    onSuccess: async (response: AxiosResponse) => {
+      // console.log(response)
       toast.success("ورود با موفقیت انجام شد");
-      console.log(response);
+      await setCookie("accessToken", response.accessToken);
     },
     onError: (error: AxiosError) => {
       if (error.status === 404) toast.error("کاربری با این اطلاعات پیدا نشد");
