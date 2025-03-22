@@ -6,7 +6,7 @@ interface HouseReserveLayoutProps {
 
 const HouseReserveLayout: React.FC<HouseReserveLayoutProps> = ({ children }) => {
     return (
-        <main dir='rtl'>{children}</main>
+        <main dir='rtl' className='w-[1376px] mx-8'>{children}</main>
     );
 };
 

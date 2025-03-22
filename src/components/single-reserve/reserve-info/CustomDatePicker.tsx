@@ -6,11 +6,13 @@ import persian_fa from "react-date-object/locales/persian_fa";
 
 interface CustomDatePickerProps {
   date: DateObject | null;
+  min?: null | DateObject;
 }
 
 const CustomDatePicker: FC<CustomDatePickerProps & CalendarProps> = ({
   onChange,
   date,
+  min,
 }) => {
   return (
     <DatePicker
@@ -23,10 +25,14 @@ const CustomDatePicker: FC<CustomDatePickerProps & CalendarProps> = ({
       locale={persian_fa}
       calendarPosition="bottom-right"
       format="YYYY-M-D"
-      minDate={new DateObject({ calendar: persian, locale: persian_fa }).add(
-        1,
-        "day"
-      )}
+      minDate={
+        !min
+          ? new DateObject({ calendar: persian, locale: persian_fa }).add(
+              1,
+              "day"
+            )
+          : new DateObject(min).add(1, "day")
+      }
     />
   );
 };

@@ -11,7 +11,7 @@ const Gallery = ({ pictures }: { pictures: string[] }) => {
 
   const Sidebar = () => {
     return (
-      <div className="w-[calc(100%-1143px)] h-full grid grid-cols-2 grid-rows-8 gap-[21px]">
+      <div className="min-w-[202px] w-[202px] col-span-2 row-span-5 max-xl:hidden h-full grid grid-cols-2 grid-rows-8 gap-5">
         {pictures.map((item, index) => (
           <img
             alt=""
@@ -30,27 +30,31 @@ const Gallery = ({ pictures }: { pictures: string[] }) => {
   };
 
   return (
-    <div className="w-full h-[444px] gap-[21px] flex">
-      <Slider
-        onSwiper={(swiper: Swiper) => (swiperRef.current = swiper)}
-        onSlideChange={(ev) => {
-          setActive(ev.activeIndex);
-        }}
-        slidesPerView={1}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-        className="mb-20 w-[1140px] max-w-[1140px] h-full bg-gray rounded-[40px] overflow-hidden"
-      >
-        {pictures.map((item, index) => (
-          <SwiperSlide key={index}>
-            <img className="w-full h-full" src={item} alt="" />
-          </SwiperSlide>
-        ))}
-      </Slider>
-      <Sidebar />
+    <div className="w-full h-[444px] max-sm:!h-[250px] grid grid-cols-12 grid-rows-5 gap-5">
+      <div className="max-xl:col-span-12 col-span-10 row-span-5">
+        <Slider
+          onSwiper={(swiper: Swiper) => (swiperRef.current = swiper)}
+          onSlideChange={(ev) => {
+            setActive(ev.activeIndex);
+          }}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          className="w-full h-full rounded-[40px] overflow-hidden"
+        >
+          {pictures.map((item, index) => (
+            <SwiperSlide key={index}>
+              <img className="w-full h-full" src={item} alt="" />
+            </SwiperSlide>
+          ))}
+        </Slider>
+      </div>
+     
+        <Sidebar />
+      
     </div>
   );
 };

@@ -36,9 +36,8 @@ const DateSection: FC<DateSectionProps> = ({
   }, [startDate, endDate]);
 
   useEffect(() => {
-    if (duration <= 0 && startDate)
-      setEndDate(new DateObject(startDate).add(1, "day"));
-  }, [duration, startDate]);
+    if (startDate) setEndDate(new DateObject(startDate).add(1, "day"));
+  }, [startDate]);
 
   // Show duration section
   const DurationSection = () => {
@@ -58,18 +57,14 @@ const DateSection: FC<DateSectionProps> = ({
   return (
     <div className="flex flex-wrap gap-y-8 w-full mt-6">
       <CustomInputs tag="تاریخ رفت">
-        <CustomDatePicker
-          date={startDate}
-          value={startDate}
-          onChange={setStartDate}
-        />
+        <CustomDatePicker date={startDate} onChange={setStartDate} />
         <DurationSection />
       </CustomInputs>
       <CustomInputs tag="تاریخ برگشت">
         <CustomDatePicker
           date={endDate}
-          value={endDate}
           onChange={setEndDate}
+          min={startDate}
         />
       </CustomInputs>
     </div>

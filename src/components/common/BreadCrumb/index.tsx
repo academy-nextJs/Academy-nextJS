@@ -18,7 +18,7 @@ export default function Breadcrumb({
     <nav
       dir="rtl"
       aria-label="Breadcrumb"
-      className={`flex items-center w-fit max-lg:mx-auto bg-base font-Peyda-400 text-sm py-2 sm:px-10 text-gray ${className}`}
+      className={`flex items-center w-fit max-lg:mx-auto bg-base font-Peyda-400 text-sm py-2 text-gray ${className}`}
     >
       <Link
         href="/"

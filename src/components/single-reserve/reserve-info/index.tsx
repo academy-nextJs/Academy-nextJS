@@ -42,7 +42,7 @@ const ReserveInfo: FC<ReserveInfoProps> = ({ price, house_id }) => {
   };
 
   return (
-    <div className="relative flex flex-wrap gap-y-6 h-fit w-[329px] px-6 pb-4 pt-12 bg-gray rounded-[32px] border border-[#565656]">
+    <div className="relative flex flex-wrap gap-y-6 h-fit max-lg:w-full w-[329px] lg:min-w-[329px] px-6 pb-4 pt-12 bg-gray rounded-[32px] border border-[#565656]">
       <PanelChip
         icon={<HouseIcon />}
         text="رزرو خونه برای :"

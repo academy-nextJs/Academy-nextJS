@@ -37,7 +37,7 @@ export type ButtonProps = {
   children: ReactNode;
   className?: string;
   variant?: "bordered" | "solid";
-  onClick: () => void
+  onClick?: () => void;
 };
 
 export default function Button({
@@ -51,7 +51,7 @@ export default function Button({
   children,
   className,
   isMagnetic,
-  onClick
+  onClick,
 }: ButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -86,13 +86,14 @@ export default function Button({
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
     }, 600);
 
-    onClick()
+    if (onClick) onClick();
   };
 
   return (
     <div
-      className={`relative flex items-center justify-center ${size === "full" ? "w-full" : "w-fit"
-        }`}
+      className={`relative flex items-center justify-center ${
+        size === "full" ? "w-full" : "w-fit"
+      }`}
       onMouseMove={isMagnetic ? handleMouseMove : undefined}
       onMouseLeave={isMagnetic ? handleMouseLeave : undefined}
     >
@@ -106,9 +107,10 @@ export default function Button({
           ref={buttonRef}
           onClick={handleClick}
           className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${className} 
-            ${variant === "solid"
-              ? COLORS[color]
-              : `bg-transparent ${BORDERS[color]} border-2`
+            ${
+              variant === "solid"
+                ? COLORS[color]
+                : `bg-transparent ${BORDERS[color]} border-2`
             } ${SIZES[size]}`}
           style={{
             borderColor:

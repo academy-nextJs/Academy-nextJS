@@ -45,9 +45,9 @@ const TabSection: FC<TabSectionProps> = ({
           }
           className="font-Peyda-500 flex flex-wrap gap-5 text-white"
         >
-          {categories?.map((item) => (
+          {/* {categories?.map((item) => (
             <HouseFacilities key={item.id} K="سن بنا" V={item.name} />
-          ))}
+          ))} */}
         </Tab>
         <Tab
           key="HouseLocation"
@@ -71,7 +71,7 @@ const TabSection: FC<TabSectionProps> = ({
           }
           className="font-Peyda-500 flex flex-wrap gap-y-3 text-white"
         >
-          <CommentWrapper house_id={house_id} height="620px" width="1376px" />
+          <CommentWrapper house_id={house_id} height="620px" />
         </Tab>
       </CustomTabs>
     </div>

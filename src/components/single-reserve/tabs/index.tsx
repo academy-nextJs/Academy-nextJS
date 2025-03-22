@@ -14,7 +14,7 @@ const TabSection: FC<Omit<TabSectionProps, "location">> = ({
   house_id,
 }) => {
   return (
-    <div className="w-[999px] flex flex-wrap gap-y-8 h-fit">
+    <div className="w-full max-w-[999px] flex flex-wrap gap-y-8 h-fit max-lg:mb-28">
       <CustomTabs>
         <Tab
           key="HouseAbout"
@@ -38,9 +38,9 @@ const TabSection: FC<Omit<TabSectionProps, "location">> = ({
           }
           className="flex flex-wrap gap-x-[17px] gap-y-8"
         >
-          {categories?.map((item) => (
+          {/* {categories?.map((item) => (
             <HouseFacilities key={item.id} K="سن بنا" V={item.name} />
-          ))}
+          ))} */}
         </Tab>
         <Tab
           key="HouseComment"
@@ -51,7 +51,7 @@ const TabSection: FC<Omit<TabSectionProps, "location">> = ({
             />
           }
         >
-          <CommentWrapper house_id={house_id} width="999px" height="620px" />
+          <CommentWrapper house_id={house_id} height="620px" />
         </Tab>
       </CustomTabs>
     </div>

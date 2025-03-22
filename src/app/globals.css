@@ -85,7 +85,7 @@
 
 @layer components {
   .label-input {
-    @apply text-base  !top-[37px] !right-[15px] px-2;
+    @apply text-base !top-[37px] !right-[15px] px-2;
   }
   .input {
     @apply text-xl;

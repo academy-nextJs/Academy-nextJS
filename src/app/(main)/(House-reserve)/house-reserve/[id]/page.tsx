@@ -23,7 +23,7 @@ const SingleHouseReserve = async ({
   ];
 
   return (
-    <div className="w-full mx-8 mt-32 h-fit max-w-[1376px]">
+    <div className="w-full mt-32 h-fit">
       <Breadcrumb items={breadcrumb} />
       <GalleryWrapper
         star={data.rate}
@@ -31,7 +31,7 @@ const SingleHouseReserve = async ({
         address={data.address}
         pictures={data.photos}
       />
-      <div className="w-full mt-[49px] mb-14 flex gap-x-[48px]">
+      <div className="w-full mt-[49px] mb-14 flex gap-x-[48px] max-lg:flex-wrap">
         <TabSection house_id={data.id} categories={data.categories} />
         <ReserveInfo price={data.price} house_id={data.id} />
       </div>

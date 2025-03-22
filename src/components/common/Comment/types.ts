@@ -1,6 +1,5 @@
 export interface CommentWrapperProps {
   house_id: string;
-  width: string;
   height: string;
 }
 

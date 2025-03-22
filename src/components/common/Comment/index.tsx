@@ -11,7 +11,6 @@ import { CommentWrapperProps } from "./types";
 const CommentWrapper: FC<CommentWrapperProps> = ({
   house_id,
   height,
-  width,
 }) => {
   const { data, isSuccess, isLoading, isError } = useGetAllComments({
     house_id: house_id,
@@ -24,10 +23,9 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
       <CommentForm house_id={house_id} />
       <div
         style={{
-          width: width,
           height: height,
         }}
-        className={`mt-10 mb-14 ${
+        className={`mt-10 mb-14 !w-full ${
           isError || data?.length == 0 ? "hidden" : null
         }`}
       >
@@ -65,7 +63,7 @@ const CommentWrapper: FC<CommentWrapperProps> = ({
         </Slider>
       </div>
       {isError || data?.length == 0 ? (
-        <div className="w-full text-center py-10">
+        <div className="w-full text-center py-28 font-Peyda-500 text-white">
           کامنتی برای این اقامتگاه وجود ندارد
         </div>
       ) : null}
