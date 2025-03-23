@@ -22,6 +22,7 @@ export const useLoginUser = () => {
       // console.log(response)
       toast.success("ورود با موفقیت انجام شد");
       await setCookie("accessToken", response.accessToken);
+      await setCookie("refreshToken", response.refreshToken);
     },
     onError: (error: AxiosError) => {
       if (error.status === 404) toast.error("کاربری با این اطلاعات پیدا نشد");

@@ -5,6 +5,7 @@ import ReactQueryProvider from "@/Layout/ReactQueryProvider";
 import Footer from "@/components/common/Footer";
 import ToastAlert from "@/components/common/ToastContainer";
 import { SessionProvider } from "@/Layout/SessionProvider";
+import TokenRefresher from "@/components/common/TokenRefresher";
 
 const Providers = ({
   children,
@@ -22,8 +23,9 @@ const Providers = ({
             {children}
             <Footer />
           </main>
+          <TokenRefresher />
+          <ToastAlert />
         </SessionProvider>
-        <ToastAlert />
       </HeroUIProvider>
     </ReactQueryProvider>
   );

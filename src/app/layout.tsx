@@ -14,7 +14,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
     const accessToken = await getCookie("accessToken");
-  
   return (
     <html lang="en" dir="rtl">
       <body className="dark bg-base">

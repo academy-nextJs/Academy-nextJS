@@ -1,7 +1,7 @@
-import { getCookie } from "@/core/models/cookie/token-cookie";
+import { getCookie, setCookie } from "@/core/models/cookie/token-cookie";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
-const baseURL = process.env.NEXT_PUBLIC_API_URL;
+export const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const instance = axios.create({
   baseURL: baseURL,
@@ -38,3 +38,33 @@ instance.interceptors.request.use(
 );
 
 export default instance;
+
+// Response interceptor to handle 401 errors (token expired)
+instance.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    if (error.response?.status === 401) {
+      // Attempt to refresh
+      const refreshToken = await getCookie("refreshToken");
+      if (refreshToken) {
+        try {
+          const res = await fetch("https://delta-project.liara.run/api/auth/refresh", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ token: refreshToken }),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            await setCookie("accessToken", data.accessToken);
+            // Retry the original request with new token
+            // return api(error.config);
+          }
+        } catch (refreshError) {
+          console.log(refreshError)
+          // Refresh failed, log out or handle error
+        }
+      }
+    }
+    return Promise.reject(error);
+  }
+);
