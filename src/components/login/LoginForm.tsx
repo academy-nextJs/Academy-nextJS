@@ -11,7 +11,6 @@ import { loginValidations } from "@/core/validations/Auth.Validations";
 
 const LoginForm = () => {
   const { mutate } = useLoginUser();
-
   // Handle Formik
   const formik = useFormik({
     initialValues: {
@@ -29,11 +28,10 @@ const LoginForm = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} >
       <div className="flex max-sm:flex-col gap-y-8 gap-2 justify-between items-center">
         <div className="flex flex-col max-md:w-full sm:w-[47%] relative">
           <Input
-            className=""
             type="email"
             label="ایمیل شما:"
             placeholder="مثال : dakjsbd@email.com"
@@ -43,7 +41,7 @@ const LoginForm = () => {
             }}
             id="email"
             name="email"
-            defaultValue={formik.values.email}
+            value={formik.values.email}
             onChange={formik.handleChange}
           />
           {formik.touched.email && formik.errors.email ? (
@@ -54,7 +52,6 @@ const LoginForm = () => {
         </div>
         <div className="max-md:w-full  sm:w-[47%] relative">
           <Input
-            className=""
             label="کلمه عبور:"
             placeholder="کلمه عبور را وارد کنید"
             endContent={
@@ -73,7 +70,7 @@ const LoginForm = () => {
             variant="bordered"
             id="password"
             name="password"
-            defaultValue={formik.values.password}
+            value={formik.values.password}
             onChange={formik.handleChange}
           />
           {formik.touched.password && formik.errors.password ? (

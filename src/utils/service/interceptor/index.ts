@@ -1,12 +1,10 @@
+import { getCookie } from "@/core/models/cookie/token-cookie";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const instance = axios.create({
   baseURL: baseURL,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
 });
 
 const onSuccess = <T>(response: AxiosResponse<T>): T => {
@@ -15,7 +13,7 @@ const onSuccess = <T>(response: AxiosResponse<T>): T => {
 
 const onError = (error: AxiosError): Promise<never> => {
   if (error.response) {
-    // 
+    //
     if (error.response.status >= 404 && error.response.status < 500) {
       console.log("Client Error:" + error.response.status);
     }
@@ -25,5 +23,18 @@ const onError = (error: AxiosError): Promise<never> => {
 };
 
 instance.interceptors.response.use(onSuccess, onError);
+
+instance.interceptors.request.use(
+  async (config) => {
+    const token = await getCookie("accessToken");
+    if (token != null) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 export default instance;
