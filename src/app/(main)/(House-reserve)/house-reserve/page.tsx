@@ -1,8 +1,9 @@
+import HouseReserveWrapper from '@/components/houseReserve'
 import React from 'react'
 
 const HouseReserve = () => {
   return (
-    <div>HouseReserve</div>
+    <HouseReserveWrapper />
   )
 }
 

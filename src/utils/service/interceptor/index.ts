@@ -5,9 +5,9 @@ const baseURL = process.env.NEXT_PUBLIC_API_URL;
 
 const instance = axios.create({
   baseURL: baseURL,
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem("token")}`,
-  },
+  // headers: {
+  //   Authorization: `Bearer ${localStorage.getItem("token")}`,
+  // },
 });
 
 const onSuccess = <T>(response: AxiosResponse<T>): T => {

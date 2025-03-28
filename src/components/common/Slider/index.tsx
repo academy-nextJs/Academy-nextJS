@@ -1,8 +1,8 @@
 "use client";
 import { FC, ReactNode } from "react";
 import { A11y, Autoplay, Pagination } from "swiper/modules";
-import { Swiper } from "swiper/react";
-import { SwiperOptions } from "swiper/types";
+import { Swiper as SwiperHolder } from "swiper/react";
+import { Swiper, SwiperOptions } from "swiper/types";
 
 // Import Swiper styles
 import "swiper/css";
@@ -13,17 +13,21 @@ import "./SwiperCustomize.css";
 interface SliderProps {
   children: ReactNode;
   className: string;
+  onSwiper: ((swiper: Swiper) => void) | undefined;
+  onSlideChange: ((swiper: Swiper) => void) | undefined;
 }
 
 const Slider: FC<Partial<SwiperOptions & SliderProps>> = (props) => {
   return (
-    <Swiper
+    <SwiperHolder
+      onSwiper={props.onSwiper}
+      onSlideChange={props.onSlideChange}
       modules={[Pagination, Autoplay, A11y]}
       pagination={{ clickable: true }}
       {...props}
     >
       {props.children}
-    </Swiper>
+    </SwiperHolder>
   );
 };
 

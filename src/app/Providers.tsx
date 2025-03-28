@@ -8,7 +8,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <ReactQueryProvider>
       <HeroUIProvider>
-        <main className="flex flex-wrap justify-center">
+        <main>
           {/* <Navbar/> */}
           {children}
           <Footer />

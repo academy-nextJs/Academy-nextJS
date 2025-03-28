@@ -26,7 +26,7 @@ const BORDERS = {
   red: "text-red border-red",
 };
 
-type ButtonProps = {
+export type ButtonProps = {
   color?: keyof typeof COLORS;
   size?: keyof typeof SIZES;
   width?: string;
@@ -35,7 +35,7 @@ type ButtonProps = {
   endContent?: ReactNode;
   isMagnetic?: boolean;
   children: ReactNode;
-  ClassName?: string;
+  className?: string;
   variant?: "bordered" | "solid";
 };
 
@@ -48,7 +48,7 @@ export default function Button({
   endContent,
   variant = "solid",
   children,
-  ClassName,
+  className,
   isMagnetic,
 }: ButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -87,9 +87,8 @@ export default function Button({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${
-        size === "full" ? "w-full" : "w-fit"
-      }`}
+      className={`relative flex items-center justify-center ${size === "full" ? "w-full" : "w-fit"
+        }`}
       onMouseMove={isMagnetic ? handleMouseMove : undefined}
       onMouseLeave={isMagnetic ? handleMouseLeave : undefined}
     >
@@ -102,11 +101,10 @@ export default function Button({
           type="submit"
           ref={buttonRef}
           onClick={handleClick}
-          className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${ClassName} 
-            ${
-              variant === "solid"
-                ? COLORS[color]
-                : `bg-transparent ${BORDERS[color]} border-2`
+          className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${className} 
+            ${variant === "solid"
+              ? COLORS[color]
+              : `bg-transparent ${BORDERS[color]} border-2`
             } ${SIZES[size]}`}
           style={{
             borderColor:
