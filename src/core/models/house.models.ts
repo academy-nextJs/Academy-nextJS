@@ -26,4 +26,7 @@ export type GetSingleHouseType = {
   yard_type: string;
   num_comments: number;
   transaction_type: string;
+  caption: null | string
+  sellerName: string
+  sellerId: string
 };

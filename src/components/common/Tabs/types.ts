@@ -4,4 +4,5 @@ export interface TabSectionProps {
   location: LocationsType;
   categories: CategoriesType[];
   house_id: string;
+  caption: string | null;
 }

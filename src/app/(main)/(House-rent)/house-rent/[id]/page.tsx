@@ -37,8 +37,9 @@ const SingleHouseRent: FC<SingleHouseRentProps> = async ({ params }) => {
         price={data.price}
         rate={data.rate}
         tags={data.tags}
+        sellerName={data.sellerName}
       />
-      <TabSection categories={data.categories} location={data.location} house_id={data.id} />
+      <TabSection caption={data.caption} categories={data.categories} location={data.location} house_id={data.id} />
       {/* <SimilarAds href="/house-rent" data={similarData} /> */}
     </div>
   );

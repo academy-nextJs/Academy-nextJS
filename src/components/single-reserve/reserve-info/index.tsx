@@ -2,16 +2,16 @@
 import PanelChip from "@/components/common/Chip/PanelChip";
 import { HouseIcon } from "@/core/icon/icons";
 import { SeparationPrice } from "@/utils/SeparationPrice";
-import { useCreateBooking } from "@/utils/service/api/post/CreateBooking";
+import Cookies from "js-cookie";
 import { FC, useState } from "react";
+import gregorian from "react-date-object/calendars/gregorian";
+import gregorian_en from "react-date-object/locales/gregorian_en";
 import { RiArrowDropLeftLine } from "react-icons/ri";
 import { DateObject } from "react-multi-date-picker";
 import Button from "../../common/Button/Button";
 import DiscountGenerator from "../../common/DiscountGenerator";
 import BookingPrices from "./BookingPrices";
 import DateSection from "./DateSection";
-import gregorian from "react-date-object/calendars/gregorian";
-import gregorian_en from "react-date-object/locales/gregorian_en";
 
 interface ReserveInfoProps {
   price: string;
@@ -23,12 +23,11 @@ const ReserveInfo: FC<ReserveInfoProps> = ({ price, house_id }) => {
     null | [DateObject, DateObject]
   >(null);
   const [duration, setDuration] = useState<number>(0);
-  const { mutate } = useCreateBooking();
 
   const HandleReserve = () => {
     if (!reserveDate) return;
 
-    mutate({
+    const dateObject = {
       house_id: house_id,
       reserved_dates: [
         new DateObject(reserveDate[0])
@@ -38,7 +37,9 @@ const ReserveInfo: FC<ReserveInfoProps> = ({ price, house_id }) => {
           .convert(gregorian, gregorian_en)
           .format("YYYY-MM-DD"),
       ],
-    });
+    };
+
+    Cookies.set("reserve-date", JSON.stringify(dateObject));
   };
 
   return (
@@ -48,7 +49,11 @@ const ReserveInfo: FC<ReserveInfoProps> = ({ price, house_id }) => {
         text="رزرو خونه برای :"
         className="w-[233px] h-12 top-0 left-[50%] translate-x-[-50%] flex items-center justify-center gap-x-2 rounded-b-[32px]"
       />
-      <DateSection setReserveDate={setReserveDate} duration={duration} setDuration={setDuration} />
+      <DateSection
+        setReserveDate={setReserveDate}
+        duration={duration}
+        setDuration={setDuration}
+      />
       <BookingPrices night={duration} price={parseInt(price)} />
       <div className="w-full flex flex-col items-end gap-3">
         <DiscountGenerator price="25000000" view="both" percent={15} />

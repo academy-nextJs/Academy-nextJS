@@ -19,6 +19,7 @@ const TabSection: FC<TabSectionProps> = ({
   location,
   categories,
   house_id,
+  caption
 }) => {
   return (
     <div className="w-full flex flex-wrap gap-y-8 h-fit mt-[69px]">
@@ -33,7 +34,7 @@ const TabSection: FC<TabSectionProps> = ({
           }
           className="font-Peyda-500 flex flex-wrap gap-y-3 text-white"
         >
-          <HouseAbout />
+          <HouseAbout caption={caption} />
         </Tab>
         <Tab
           key="HouseFacilities"

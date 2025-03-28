@@ -11,6 +11,7 @@ export interface GalleryWrapperProps {
   rate: string;
   price: string;
   tags: string[];
+  sellerName: string
 }
 
 const GalleryWrapper: FC<GalleryWrapperProps> = (props) => {
@@ -26,7 +27,7 @@ const GalleryWrapper: FC<GalleryWrapperProps> = (props) => {
     <div className="w-full mt-6 flex flex-wrap gap-6">
       <div className="w-full flex max-sm:flex-wrap gap-5 max-sm:order-4">
         <SliderWrapper photos={props.photos} />
-        <Panel />
+        <Panel sellerName={props.sellerName} />
       </div>
       <div className="max-sm:order-2 w-full font-Peyda-500 max-lg:text-sm flex flex-wrap gap-4 items-center text-[#AAAAAA] overflow-x-auto">
         {props.tags?.map((item, index) => (

@@ -10,7 +10,7 @@ interface PriceSectionProps {
   name: string;
 }
 
-const Panel = () => {
+const Panel = ({ sellerName }: { sellerName: string }) => {
   const PriceSection: FC<PriceSectionProps> = ({ icon, price, name }) => {
     return (
       <div className="!h-5 w-full flex justify-between items-center">
@@ -41,7 +41,7 @@ const Panel = () => {
       <div className="w-full flex flex-wrap justify-center gap-y-2 mb-2">
         <div className="w-12 h-12 max-sm:w-16 max-sm:h-16 rounded-2xl bg-[#565656]"></div>
         <h1 className="w-full font-Peyda-500 text-white text-center max-sm:text-lg">
-          محمد رضا ساداتی
+          {sellerName ? sellerName : "نا مشخص"}
         </h1>
         <div className="flex gap-x-2 items-center">
           <DateIcon width={16} height={16} />
@@ -57,15 +57,17 @@ const Panel = () => {
         price="40000000"
       />
       <Button color="green" {...ButtonSimilarProps}>
-        <PhoneIcon fill="#363636" className="ml-2 w-[13px] h-[13px] max-sm:h-4 max-sm:w-4" />
+        <PhoneIcon
+          fill="#363636"
+          className="ml-2 w-[13px] h-[13px] max-sm:h-4 max-sm:w-4"
+        />
         تماس با 0933****9
       </Button>
-      <Button
-        color="light"
-        variant="bordered"
-        {...ButtonSimilarProps}
-      >
-        <CommentIcon fill="#fff" className="ml-2 w-[13px] h-[13px] max-sm:h-4 max-sm:w-4" />
+      <Button color="light" variant="bordered" {...ButtonSimilarProps}>
+        <CommentIcon
+          fill="#fff"
+          className="ml-2 w-[13px] h-[13px] max-sm:h-4 max-sm:w-4"
+        />
         گفتگو با فروشنده
       </Button>
     </div>
