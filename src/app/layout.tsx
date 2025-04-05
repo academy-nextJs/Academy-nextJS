@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./Providers";
-import { getCookie } from "@/core/models/cookie/token-cookie";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,11 +12,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const accessToken = await getCookie("accessToken");
   return (
     <html lang="en" dir="rtl">
       <body className="dark bg-base">
-        <Providers accessToken={accessToken}>{children}</Providers>
+        <Providers >{children}</Providers>
       </body>
     </html>
   );

@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from "@/core/models/cookie/token-cookie";
+import { getServerCookie, setServerCookie } from "@/core/models/cookie/server-cookie";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 export const baseURL = process.env.NEXT_PUBLIC_API_URL;
@@ -26,7 +26,7 @@ instance.interceptors.response.use(onSuccess, onError);
 
 instance.interceptors.request.use(
   async (config) => {
-    const token = await getCookie("accessToken");
+    const token = await getServerCookie("accessToken");
     if (token != null) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -45,7 +45,7 @@ instance.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 401) {
       // Attempt to refresh
-      const refreshToken = await getCookie("refreshToken");
+      const refreshToken = await getServerCookie("refreshToken");
       if (refreshToken) {
         try {
           const res = await fetch("https://delta-project.liara.run/api/auth/refresh", {
@@ -55,13 +55,11 @@ instance.interceptors.response.use(
           });
           if (res.ok) {
             const data = await res.json();
-            await setCookie("accessToken", data.accessToken);
+            await setServerCookie("accessToken", data.accessToken);
             // Retry the original request with new token
-            // return api(error.config);
           }
         } catch (refreshError) {
           console.log(refreshError)
-          // Refresh failed, log out or handle error
         }
       }
     }

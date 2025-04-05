@@ -4,20 +4,16 @@ import { HeroUIProvider } from "@heroui/react";
 import ReactQueryProvider from "@/Layout/ReactQueryProvider";
 import Footer from "@/components/common/Footer";
 import ToastAlert from "@/components/common/ToastContainer";
-import { SessionProvider } from "@/Layout/SessionProvider";
 import TokenRefresher from "@/components/common/TokenRefresher";
 
 const Providers = ({
-  children,
-  accessToken,
+  children
 }: {
   children: React.ReactNode;
-  accessToken: string | null;
 }) => {
   return (
     <ReactQueryProvider>
       <HeroUIProvider>
-        <SessionProvider accessToken={accessToken}>
           <main>
             {/* <Navbar/> */}
             {children}
@@ -25,7 +21,6 @@ const Providers = ({
           </main>
           <TokenRefresher />
           <ToastAlert />
-        </SessionProvider>
       </HeroUIProvider>
     </ReactQueryProvider>
   );

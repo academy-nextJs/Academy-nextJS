@@ -8,7 +8,7 @@ import {
   DocumentIcon,
   LocationIcon,
 } from "@/core/icon/icons";
-import { CategoriesType, LocationsType } from "@/core/models/house.models";
+import { CategoriesType, LocationsType } from "@/core/models/types/house.models";
 import { Tab } from "@heroui/react";
 import { FC } from "react";
 import CommentSection from "./CommentSection";

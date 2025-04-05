@@ -1,4 +1,4 @@
-import { CommentSingleType } from "@/core/models/comment.models";
+import { CommentSingleType } from "@/core/models/types/comment.models";
 import { AxiosResponse } from "axios";
 import http from "../../interceptor";
 

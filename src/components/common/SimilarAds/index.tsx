@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FC } from "react";
 import { RiArrowDropLeftLine } from "react-icons/ri";
 import SliderSection from "./SliderSection";
-import { GetSingleHouseType } from "@/core/models/house.models";
+import { GetSingleHouseType } from "@/core/models/types/house.models";
 
 interface SimilarAdsProps {
   href: string;

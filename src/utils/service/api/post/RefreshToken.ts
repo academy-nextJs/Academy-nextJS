@@ -1,9 +1,13 @@
-import { getCookie, setCookie } from "@/core/models/cookie/token-cookie";
 import Http from "../../interceptor";
 import { toast } from "react-toastify";
+import { setClientCookie } from "@/core/models/cookie/client-cookie";
+import {
+  getServerCookie,
+  setServerCookie,
+} from "@/core/models/cookie/server-cookie";
 
 export const RefreshToken = async () => {
-  const refreshToken = await getCookie("refreshToken");
+  const refreshToken = await getServerCookie("serverRefreshToken");
   try {
     const res = await Http.post(`/auth/refresh`, {
       token: refreshToken,
@@ -22,7 +26,8 @@ export const RefreshToken = async () => {
     if (res) {
       // console.log(res)
       // toast.success("refresh token successfully")
-      await setCookie("accessToken", res.accessToken);
+      await setServerCookie("serverAccessToken", res.accessToken);
+      setClientCookie("clientAccessToken", res.accessToken, 1);
     }
   } catch (error) {
     console.error("Error:", error);

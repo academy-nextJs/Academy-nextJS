@@ -2,7 +2,7 @@
 import { SwiperSlide } from "swiper/react";
 import Slider from "../Slider";
 import GridCardT2 from "../CardItems/cards/GridCardT2";
-import { GetSingleHouseType } from "@/core/models/house.models";
+import { GetSingleHouseType } from "@/core/models/types/house.models";
 
 const SliderSection = ({ data }: { data: GetSingleHouseType[] }) => {
   return (

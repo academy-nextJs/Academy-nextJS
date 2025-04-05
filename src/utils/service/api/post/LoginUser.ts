@@ -1,9 +1,10 @@
-import { loginUserParams, loginUserResponse } from "@/core/models/auth.models";
+import { loginUserParams, loginUserResponse } from "@/core/models/types/auth.models";
 import { AxiosError, AxiosResponse } from "axios";
 import http from "../../interceptor";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
-import { setCookie } from "@/core/models/cookie/token-cookie";
+import { setServerCookie } from "@/core/models/cookie/server-cookie";
+import { setClientCookie } from "@/core/models/cookie/client-cookie";
 
 export const LoginUser = async (
   params: loginUserParams
@@ -21,8 +22,9 @@ export const useLoginUser = () => {
     onSuccess: async (response: AxiosResponse) => {
       // console.log(response)
       toast.success("ورود با موفقیت انجام شد");
-      await setCookie("accessToken", response.accessToken);
-      await setCookie("refreshToken", response.refreshToken);
+      await setServerCookie("serverAccessToken", response.accessToken);
+      await setServerCookie("serverRefreshToken", response.refreshToken);
+      setClientCookie("clientAccessToken", response.accessToken,15)
     },
     onError: (error: AxiosError) => {
       if (error.status === 404) toast.error("کاربری با این اطلاعات پیدا نشد");
