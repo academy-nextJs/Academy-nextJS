@@ -14,8 +14,11 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en" dir="rtl">
-      <body className="dark bg-base">
-        <Providers >{children}</Providers>
+
+      <body className="dark bg-base font-Peyda-500 text-base">
+
+        <Providers>{children}</Providers>
+
       </body>
     </html>
   );
