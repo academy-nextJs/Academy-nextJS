@@ -4,6 +4,7 @@ import File from "@/assets/File";
 import { ClockIcon, LocationIcon, StarIcon } from "@/core/icon/icons";
 import { SeparationPrice } from "@/utils/SeparationPrice";
 import { FaHotel } from "react-icons/fa6";
+import Link from "next/link";
 
 const SelectedHouseReserveListItemMain = ({
   data,
@@ -13,8 +14,7 @@ const SelectedHouseReserveListItemMain = ({
   return (
     <>
       <div className="flex gap-4 flex-nowrap items-center transition-all ">
-
-          <File background="#393939" stroke="#8CFF45" />
+        <File background="#393939" stroke="#8CFF45" />
 
         <div className="h-full flex flex-col gap-4 items-start ">
           <Button
@@ -71,16 +71,19 @@ const SelectedHouseReserveListItemMain = ({
         <div className="text-3xl text-green font-Peyda-600">
           {SeparationPrice(`${data.price} ت`)}
         </div>
-
-        <Button
-          variant="solid"
-          color="green"
-          className=" mt-1 !border-2 !border-green px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
-          radius="xl"
-        >
-          <FaHotel />{" "}
-          <span className="p-0 m-0 h-min leading-[20%] ">بررسی و رزرو هتل</span>
-        </Button>
+        <Link className="" href={`/house-reserve/${data.id}`}>
+          <Button
+            variant="solid"
+            color="green"
+            className=" mt-1 !border-2 !border-green px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
+            radius="xl"
+          >
+            <FaHotel />{" "}
+            <span className="p-0 m-0 h-min leading-[20%] ">
+              بررسی و رزرو هتل
+            </span>
+          </Button>
+        </Link>
       </div>
     </>
   );

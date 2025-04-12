@@ -1,8 +1,9 @@
+"use client";
 import React from "react";
 import Breadcrumb from "../common/BreadCrumb";
 
-import { HouseReserveListType } from "@/core/constants/house-reserve/types";
 import ListOfHousesSection from "./ListOfHousesSection";
+import { useGetHousesList } from "@/utils/service/api/get/HouseReserveList";
 
 const breadcrumbItems = [
   {
@@ -10,18 +11,21 @@ const breadcrumbItems = [
   },
 ];
 
-const HouseReserveWrapper = async () => {
-  const Houses: HouseReserveListType[] = await (
-    await fetch(
-      "https://delta-project.liara.run/api/houses?page=1&limit=10&sort=&order=ASC"
-    )
-  ).json();
+const HouseReserveWrapper = () => {
+  // const [houses, setHouses] = useState<HouseReserveListType[] | undefined>(
+  //   undefined
+  // );
+  const { data:houses } = useGetHousesList();
+
+  // useEffect(() => {
+  //   setHouses(data);
+  // }, [data]);
 
   return (
     <div className="container">
       <Breadcrumb items={breadcrumbItems} />
       <section className="overflow-hidden">
-      <ListOfHousesSection Houses={Houses} />
+        <ListOfHousesSection Houses={houses ?? []} />
       </section>
     </div>
   );

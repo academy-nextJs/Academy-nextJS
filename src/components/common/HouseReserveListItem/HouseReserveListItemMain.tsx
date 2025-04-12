@@ -5,6 +5,7 @@ import { FaHotel } from "react-icons/fa6";
 import { ClockIcon, LocationIcon, StarIcon } from "@/core/icon/icons";
 import File from "@/assets/File";
 import { HouseReserveListType } from "@/core/constants/house-reserve/types";
+import Link from "next/link";
 
 const HouseReserveListItemMain = ({ data }: { data: HouseReserveListType }) => {
   return (
@@ -67,16 +68,19 @@ const HouseReserveListItemMain = ({ data }: { data: HouseReserveListType }) => {
         <div className="text-3xl text-green font-Peyda-600">
           {SeparationPrice(`${data.price} ت`)}
         </div>
-
-        <Button
-          variant="bordered"
-          color="green"
-          className=" mt-1 px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
-          radius="xl"
-        >
-          <FaHotel />{" "}
-          <span className="p-0 m-0 h-min leading-[20%] ">بررسی و رزرو هتل</span>
-        </Button>
+        <Link className="" href={`/house-reserve/${data.id}`}>
+          <Button
+            variant="bordered"
+            color="green"
+            className=" mt-1 px-6 py-3 flex items-center gap-2.5 hover:shadow-inner-[2px_2px_10px_0px_#FFFFFF3D_inset] hover:shadow-inner-[-1px_-1px_6px_0px_#0000000A_inset] hover:drop-shadow-[0px_8px_20px_0px_#8CFF451F] "
+            radius="xl"
+          >
+            <FaHotel />{" "}
+            <span className="p-0 m-0 h-min leading-[20%] ">
+              بررسی و رزرو هتل
+            </span>
+          </Button>
+        </Link>
       </div>
     </>
   );
