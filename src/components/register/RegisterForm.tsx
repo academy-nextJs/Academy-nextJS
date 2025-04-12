@@ -1,15 +1,18 @@
 "use client";
 import { Checkbox, Input, Radio } from "@heroui/react";
 import { useFormik } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { PiEyeLight, PiEyeSlash } from "react-icons/pi";
 import Button from "../common/Button/Button";
 import { MdArrowBack, MdKeyboardArrowLeft } from "react-icons/md";
 import Link from "next/link";
 import { BiCheck } from "react-icons/bi";
+import { useRegisterUser } from "@/utils/service/api/post/RegisterUser";
+import { redirect } from "next/navigation";
 
 const RegisterForm = () => {
   // Handle Formik
+    const { mutate,isSuccess } = useRegisterUser();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -18,9 +21,16 @@ const RegisterForm = () => {
       lastName: "",
     },
     onSubmit: (value) => {
-      console.log(value);
+      mutate(value);
     },
   });
+
+  useEffect(() => {
+    if (isSuccess) {
+      redirect("/login")
+    }
+  }, [isSuccess])
+  
   // visible password
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const toggleVisibility = () => setIsVisible(!isVisible);
