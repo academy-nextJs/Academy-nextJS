@@ -3,16 +3,16 @@ import { create } from "zustand";
 
 export const useHouseListParams = create<HouseReserveListParamsType>()(
   (set) => ({
-    address: "",
-    capacity: "",
+    address: undefined,
+    capacity: undefined,
     limit: 10,
-    order: "ASC",
+    order: undefined,
     page: 1,
-    price: "",
-    rate: "",
+    price: undefined,
+    rate: undefined,
     sort: undefined,
-    title: "",
-    transaction_type: "",
+    title: undefined,
+    transaction_type: undefined,
     setAdress: (value: string) => set(() => ({ address: value })),
     setCapacity: (value: string) => set(() => ({ capacity: value })),
     setOrder: (value: "ASC" | "DESC") => set(() => ({ order: value })),

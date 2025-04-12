@@ -16,7 +16,7 @@ const ListOfHousesSection = ({ Houses }: Props) => {
   const [selectedItem, setSelectedItem] =
     useState<HouseReserveListType | undefined>(undefined);
   return (
-    <div className=" p-6 h-[75vw] min-h-[50rem] rounded-[2.5rem] bg-gray flex gap-8 flex-nowrap">
+    <div className=" p-6 h-[1080px] min-h-[50rem] rounded-[2.5rem] bg-gray flex gap-8 flex-nowrap">
       <div className="w-[calc(57%_-_16px)] h-full  relative overflow-y-auto *:border-b-4 *:border-b-[#3B3B3B]">
         {Houses?.map((house) => {
           return <HouseReserveListItem key={house.id} data={house} selectedItem={selectedItem} setSelectedItem={setSelectedItem} />;

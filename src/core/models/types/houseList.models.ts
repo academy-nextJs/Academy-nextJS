@@ -31,10 +31,10 @@ export interface HouseReserveListParamsType {
   limit: number | undefined;
   sort: "price" | "rate" | undefined;
   order: "ASC" | "DESC" | undefined;
-  transaction_type: string;
-  capacity: string;
-  price: string;
-  rate: string;
-  address: string;
-  title: string;
+  transaction_type?: string | undefined;
+  capacity?: string | undefined;
+  price?: string | undefined;
+  rate?: string | undefined;
+  address?: string | undefined;
+  title?: string | undefined;
 }
