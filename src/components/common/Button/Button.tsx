@@ -28,6 +28,7 @@ const BORDERS = {
   purple: "text-purple border-purple",
 };
 
+
 const Radiuses = {
   sm: "rounded-sm",
   md: "rounded-md",
@@ -38,6 +39,7 @@ const Radiuses = {
 }
 
 type ButtonProps = {
+
   color?: keyof typeof COLORS;
   size?: keyof typeof SIZES;
   width?: string;

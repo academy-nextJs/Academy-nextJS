@@ -11,7 +11,7 @@ const LoginWrapper = () => {
     <>
       <Breadcrumb items={breadcrumb} />
       <TitleSection
-        className="text-green mt-3"
+        className="text-green"
         iconHeight="28"
         colorIcon="#8cff45"
         text="خوش برگشتی!"

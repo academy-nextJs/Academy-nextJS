@@ -51,6 +51,7 @@ const RegisterForm = () => {
               className="focus:outline-none"
               type="button"
               onClick={toggleVisibility}
+
             >
               {isVisible ? <PiEyeLight size={27} /> : <PiEyeSlash size={27} />}
             </button>

@@ -13,7 +13,7 @@
     --color-secondary-gray: #444444;
     --color-red: #ff5555;
     --color-border-gray: #565656;
-    --color-Black : #1C1C1C;
+    --color-Black: #1c1c1c;
   }
   .dark {
     --color-main: #232323;
@@ -25,7 +25,7 @@
     --color-secondary-gray: #444444;
     --color-red: #ff5555;
     --color-border-gray: #565656;
-    --color-Black : #1C1C1C;
+    --color-Black: #1c1c1c;
   }
 
   body {
@@ -79,8 +79,7 @@
   }
   @font-face {
     font-family: Peyda Number;
-    src: local("Peyda"), url("../assets/Fonts/Peyda(FaNum).ttf"),
-      format("ttf");
+    src: local("Peyda"), url("../assets/Fonts/Peyda(FaNum).ttf"), format("ttf");
   }
 }
 
@@ -89,17 +88,42 @@
     @apply text-base  !top-[37px] !right-[15px] px-2;
   }
   .input {
-    @apply !text-xl;
+    @apply text-xl;
   }
   .inputWrapper-input {
-    @apply !rounded-2xl !border-[#363636];
+    @apply !rounded-2xl border-[#363636];
   }
   .bgGradient_title {
-    background: linear-gradient(90deg,
-        rgba(87, 81, 225, 0) 0%,
-        rgba(244, 245, 243, 0.5) 53.1%,
-        rgba(48, 44, 123, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(87, 81, 225, 0) 0%,
+      rgba(244, 245, 243, 0.5) 53.1%,
+      rgba(48, 44, 123, 0) 100%
+    );
     border-radius: 2px;
+  }
+  .custom-input-date {
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+    outline: none !important;
+  }
+  .custom-container-input-date {
+    width: 100% !important;
+    border: none !important;
+    font-family: Peyda Number;
+    color: #ffffff;
+    background-color: transparent !important;
+  }
+  .swiper-pagination-custom {
+    background-color: #232323;
+    width: 144px !important;
+    height: 32px;
+    border-radius: 24px;
+    margin-bottom: 16px;
+    left: 50% !important;
+    transform: translateX(-50%);
   }
 }
 @layer utilities {

@@ -1,4 +1,4 @@
-import Chip from "@/components/common/Chip";
+import Chip from "@/components/common/Chip/SectionChip";
 import SliderSection from "./SliderSection";
 
 const Comment = () => {

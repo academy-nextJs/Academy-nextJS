@@ -8,7 +8,7 @@ import { loginStatus } from "@/core/constants/Auth";
 const WinnerBox = () => {
   return (
     <div className="h-full lg:w-1/2 relative">
-      <Image src={mainImg} alt="bg-main " className="w-full" />
+      <Image src={mainImg} alt="bg-main" className="w-full h-full"/>
       <div className="w-64 absolute top-10 left-[6%]">
         <CustomTab buttonArray={loginStatus} color={"default"} />
       </div>

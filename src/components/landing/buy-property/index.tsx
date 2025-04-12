@@ -1,6 +1,6 @@
 import Button from "@/components/common/Button/Button";
 import SliderSection from "./SliderSection";
-import Chip from "@/components/common/Chip";
+import Chip from "@/components/common/Chip/SectionChip";
 
 const BuyProperty = () => {
   return (
