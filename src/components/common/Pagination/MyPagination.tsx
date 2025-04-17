@@ -1,5 +1,5 @@
 "use client";
-import { usePagination, PaginationItemType, cn } from "@heroui/react";
+import { usePagination, PaginationItemType} from "@heroui/react";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 

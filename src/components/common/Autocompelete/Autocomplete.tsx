@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { FC, JSX } from "react";
 import {Autocomplete, AutocompleteItem} from "@heroui/react";
 
 interface AutocompleteProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   children: (item: any) => JSX.Element;
   className: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   defaultItems: any[];
   label: string;
   listboxProps: {
