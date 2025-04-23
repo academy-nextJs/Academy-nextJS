@@ -2,7 +2,7 @@ import Comment from "@/components/common/Comment";
 import CardComment from "@/components/common/Comment/Card";
 import CommentCardSkeleton from "@/components/common/Comment/Skeleton";
 import Slider from "@/components/common/Slider";
-import { CommentSingleType } from "@/core/models/comment.models";
+import { CommentSingleType } from "@/core/models/types/comment.models";
 import { useGetAllComments } from "@/utils/service/api/get/GetAllComments";
 import { Fragment } from "react";
 import { SwiperSlide } from "swiper/react";

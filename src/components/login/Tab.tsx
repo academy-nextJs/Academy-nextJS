@@ -6,7 +6,14 @@ import React, { FC } from "react";
 
 interface IProps {
   buttonArray: TAuthTab[];
-  color: "success" | "default" | "primary" | "secondary" | "warning" | "danger" | undefined
+  color:
+    | "success"
+    | "default"
+    | "primary"
+    | "secondary"
+    | "warning"
+    | "danger"
+    | undefined;
 }
 
 const CustomTab: FC<IProps> = ({ buttonArray, color }) => {
@@ -17,7 +24,12 @@ const CustomTab: FC<IProps> = ({ buttonArray, color }) => {
         selectedKey={color === "success" ? pathname : undefined}
         aria-label="Options"
         color={color}
-        classNames={{ tabList: "p-1.5 w-full", tab: `px-2`, base: "w-full" }}
+        classNames={{
+          tabList: "p-1.5 w-full",
+          tab: `px-2`,
+          base: "w-full",
+          cursor: "bg-[#8CFF45] shadow-[0px_8px_10px_rgba(140,255,69,0.16)]",
+        }}
       >
         {buttonArray?.map((tab) => (
           <Tab

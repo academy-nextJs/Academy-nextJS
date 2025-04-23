@@ -1,7 +1,7 @@
 import {
   CommentSingleType,
   CreateCommentParamsType,
-} from "@/core/models/comment.models";
+} from "@/core/models/types/comment.models";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
 import http from "../../interceptor/";

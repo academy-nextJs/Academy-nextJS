@@ -1,4 +1,4 @@
-import { SeparationPrice } from "@/utils/SeparationPrice";
+import { SeparationPrice } from "@/utils/helper/SeparationPrice";
 import { FC } from "react";
 
 interface DiscountGenerator {

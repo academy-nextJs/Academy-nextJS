@@ -1,7 +1,7 @@
 import {
   CommentSingleType,
   GetAllCommentParamsType,
-} from "@/core/models/comment.models";
+} from "@/core/models/types/comment.models";
 import { AxiosResponse } from "axios";
 import http from "../../interceptor";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";

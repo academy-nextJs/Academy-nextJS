@@ -2,7 +2,7 @@ import Breadcrumb, { BreadcrumbItem } from "@/components/common/BreadCrumb";
 import SimilarAds from "@/components/common/SimilarAds";
 import GalleryWrapper from "@/components/single-rent/gallery";
 import TabSection from "@/components/single-rent/tabs";
-import { GetSingleHouseType } from "@/core/models/house.models";
+import { GetSingleHouseType } from "@/core/models/types/house.models";
 import GetSingleHouse from "@/utils/service/api/get/GetSingleHouse";
 import { notFound } from "next/navigation";
 import { FC } from "react";

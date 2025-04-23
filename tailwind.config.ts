@@ -12,6 +12,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors:{
+        grayBg: "var(--color-gray)",
+      },
       backgroundColor: {
         base: "var(--color-main)",
         green: "var(--color-green)",

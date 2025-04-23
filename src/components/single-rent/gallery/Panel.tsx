@@ -1,7 +1,7 @@
 import Button, { ButtonProps } from "@/components/common/Button/Button";
 import PanelChip from "@/components/common/Chip/PanelChip";
 import { CommentIcon, DateIcon, PhoneIcon, PriceIcon } from "@/core/icon/icons";
-import { SeparationPrice } from "@/utils/SeparationPrice";
+import { SeparationPrice } from "@/utils/helper/SeparationPrice";
 import { FC, ReactNode } from "react";
 
 interface PriceSectionProps {

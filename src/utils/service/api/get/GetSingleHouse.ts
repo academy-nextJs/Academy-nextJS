@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import http from "../../interceptor";
-import { GetSingleHouseType } from "@/core/models/house.models";
+import { GetSingleHouseType } from "@/core/models/types/house.models";
 
 async function GetSingleHouse(
   id: string

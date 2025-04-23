@@ -126,3 +126,8 @@
     transform: translateX(-50%);
   }
 }
+@layer utilities {
+  .container{
+    @apply mx-auto;
+  }
+}
