@@ -11,7 +11,7 @@ export const setClientCookie = (name: string, value: string, eMin: number) => {
 
 // Function for reading and getting cookies
 export const getClientCookie = (name: string) => {
-  console.log(document.cookie);
+  // console.log(document.cookie);
   const nameEQ = name + "=";
   const ca = document.cookie.split(";");
   const cookieValue = ca

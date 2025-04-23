@@ -27,7 +27,7 @@ export const RefreshToken = async () => {
       // console.log(res)
       // toast.success("refresh token successfully")
       await setServerCookie("serverAccessToken", res.accessToken);
-      setClientCookie("clientAccessToken", res.accessToken, 1);
+      setClientCookie("clientAccessToken", res.accessToken, 15);
     }
   } catch (error) {
     console.error("Error:", error);

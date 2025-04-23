@@ -28,8 +28,8 @@ export const useLoginUser = () => {
     },
     onError: (error: AxiosError) => {
       if (error.status === 404) toast.error("کاربری با این اطلاعات پیدا نشد");
-      else if (error.status && error.status >= 500)
-        toast.info("برای سرور مشکلی پیش آمده لطفا بعدا تلاش کنید!");
+      // else if (error.status && error.status >= 500)
+      //   toast.info("برای سرور مشکلی پیش آمده لطفا بعدا تلاش کنید!");
     },
   });
 };

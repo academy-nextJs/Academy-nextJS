@@ -38,18 +38,3 @@ instance.interceptors.request.use(
 );
 
 export default instance;
-
-// // Response interceptor to handle 401 errors (token expired)
-// instance.interceptors.response.use(
-//   (response) => response,
-//   async (error) => {
-//     if (error.response?.status === 401) {
-//       // Attempt to refresh
-//       const refreshToken = await getServerCookie("refreshToken");
-//       if (refreshToken) {
-//         RefreshToken();
-//       }
-//     }
-//     return Promise.reject(error);
-//   }
-// );
