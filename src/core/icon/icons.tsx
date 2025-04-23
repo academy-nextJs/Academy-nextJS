@@ -455,6 +455,10 @@ export function FacilitiesIcon(props: SVGProps<SVGSVGElement>) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+       </svg>
+  )
+}
+    
       export function ClockIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
