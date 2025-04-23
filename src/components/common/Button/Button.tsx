@@ -13,10 +13,11 @@ const SIZES = {
 };
 
 const COLORS = {
-  dark: "bg-gray",
+  dark: "bg-gray text-white",
   light: "bg-white",
-  green: "bg-green",
-  red: "bg-red",
+  green: "bg-green ",
+  red: "bg-red text-white",
+  purple: "bg-purple text-white",
 };
 
 const BORDERS = {
@@ -24,9 +25,21 @@ const BORDERS = {
   light: "text-white border-white",
   green: "text-green border-green",
   red: "text-red border-red",
+  purple: "text-purple border-purple",
 };
 
-export type ButtonProps = {
+
+const Radiuses = {
+  sm: "rounded-sm",
+  md: "rounded-md",
+  lg: "rounded-lg",
+  xl: "rounded-xl",
+  "2xl": "rounded-2xl",
+  full: "rounded-full", // Full width button with height control via padding
+}
+
+type ButtonProps = {
+
   color?: keyof typeof COLORS;
   size?: keyof typeof SIZES;
   width?: string;
@@ -37,7 +50,9 @@ export type ButtonProps = {
   children: ReactNode;
   className?: string;
   variant?: "bordered" | "solid";
+  radius?: keyof typeof Radiuses;
 };
+
 
 export default function Button({
   color = "dark",
@@ -50,6 +65,7 @@ export default function Button({
   children,
   className,
   isMagnetic,
+  radius = "full",
 }: ButtonProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -87,7 +103,7 @@ export default function Button({
 
   return (
     <div
-      className={`relative flex items-center justify-center ${size === "full" ? "w-full" : "w-fit"
+      className={`relative flex  items-center justify-center ${size === "full" ? "w-full" : "w-fit"
         }`}
       onMouseMove={isMagnetic ? handleMouseMove : undefined}
       onMouseLeave={isMagnetic ? handleMouseLeave : undefined}
@@ -101,11 +117,11 @@ export default function Button({
           type="submit"
           ref={buttonRef}
           onClick={handleClick}
-          className={`relative font-bold flex items-center justify-center rounded-full shadow-lg overflow-hidden transition-all ${className} 
+          className={`relative font-bold flex items-center justify-center shadow-lg overflow-hidden transition-all ${className} 
             ${variant === "solid"
               ? COLORS[color]
               : `bg-transparent ${BORDERS[color]} border-2`
-            } ${SIZES[size]}`}
+            } ${SIZES[size]} ${Radiuses[radius]}`}
           style={{
             borderColor:
               variant === "bordered"
