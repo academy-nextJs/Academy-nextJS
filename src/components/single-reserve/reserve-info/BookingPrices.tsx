@@ -1,6 +1,6 @@
 import PanelChip from "@/components/common/Chip/PanelChip";
 import { NoteIcon } from "@/core/icon/icons";
-import { SeparationPrice } from "@/utils/SeparationPrice";
+import { SeparationPrice } from "@/utils/helper/SeparationPrice";
 
 const BookingPrices = ({ night }: { night: number }) => {
   const BookingPricesItems = () => {

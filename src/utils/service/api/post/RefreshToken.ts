@@ -1,10 +1,10 @@
 import Http from "../../interceptor";
 import { toast } from "react-toastify";
-import { setClientCookie } from "@/core/models/cookie/client-cookie";
+import { setClientCookie } from "@/utils/helper/cookie/client-cookie";
 import {
   getServerCookie,
   setServerCookie,
-} from "@/core/models/cookie/server-cookie";
+} from "@/utils/helper/cookie/server-cookie";
 
 export const RefreshToken = async () => {
   const refreshToken = await getServerCookie("serverRefreshToken");

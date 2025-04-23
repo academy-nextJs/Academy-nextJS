@@ -1,7 +1,7 @@
 import { HouseIcon } from "@/core/icon/icons";
 import Button from "../../common/Button/Button";
 import { RiArrowDropLeftLine } from "react-icons/ri";
-import { SeparationPrice } from "@/utils/SeparationPrice";
+import { SeparationPrice } from "@/utils/helper/SeparationPrice";
 import DiscountGenerator from "../../common/DiscountGenerator";
 import BookingPrices from "./BookingPrices";
 import DateSection from "./DateSection";

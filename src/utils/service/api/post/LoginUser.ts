@@ -3,8 +3,8 @@ import { AxiosError, AxiosResponse } from "axios";
 import http from "../../interceptor";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
-import { setServerCookie } from "@/core/models/cookie/server-cookie";
-import { setClientCookie } from "@/core/models/cookie/client-cookie";
+import { setServerCookie } from "@/utils/helper/cookie/server-cookie";
+import { setClientCookie } from "@/utils/helper/cookie/client-cookie";
 
 export const LoginUser = async (
   params: loginUserParams
