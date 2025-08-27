@@ -1,5 +1,5 @@
 import { AxiosResponse } from "axios";
-import http from "../../interceptor";
+import http from "../../interceptor/HttpClient";
 import { GetSingleHouseType } from "@/core/models/types/house.models";
 
 async function GetSingleHouse(

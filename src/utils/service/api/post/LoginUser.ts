@@ -1,6 +1,6 @@
 import { loginUserParams, loginUserResponse } from "@/core/models/types/auth.models";
 import { AxiosError, AxiosResponse } from "axios";
-import http from "../../interceptor";
+import http from "../../interceptor/HttpClient";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import { setServerCookie } from "@/utils/helper/cookie/server-cookie";

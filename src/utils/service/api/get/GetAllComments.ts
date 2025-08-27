@@ -3,7 +3,7 @@ import {
   GetAllCommentParamsType,
 } from "@/core/models/types/comment.models";
 import { AxiosResponse } from "axios";
-import http from "../../interceptor";
+import http from "../../interceptor/HttpClient";
 import { useQuery, UseQueryResult } from "@tanstack/react-query";
 
 export async function GetAllComments(

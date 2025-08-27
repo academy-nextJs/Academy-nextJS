@@ -9,6 +9,7 @@ const checkTokenExpiration = (
   if (Token) {
     // alert()
     const decodedToken = Jwt_decode(Token);
+    console.log(decodedToken)
     const nowTime = Math.floor(new Date().getTime() / 1000);
     const timeLeft = decodedToken?.exp - nowTime;
     // console.log(timeLeft);

@@ -4,7 +4,7 @@ import {
 } from "@/core/models/types/comment.models";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
-import http from "../../interceptor/";
+import http from "../../interceptor/HttpClient";
 
 export async function CreateComment(
   params: Partial<CreateCommentParamsType>

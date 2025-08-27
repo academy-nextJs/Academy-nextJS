@@ -1,6 +1,6 @@
 import { CommentSingleType } from "@/core/models/types/comment.models";
 import { AxiosResponse } from "axios";
-import http from "../../interceptor";
+import http from "../../interceptor/HttpClient";
 
 async function GetSingleComments(
   id: number

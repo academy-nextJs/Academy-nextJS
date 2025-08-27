@@ -1,4 +1,4 @@
-import Http from "../../interceptor";
+import Http from "../../interceptor/HttpClient";
 import { toast } from "react-toastify";
 import { setClientCookie } from "@/utils/helper/cookie/client-cookie";
 import {

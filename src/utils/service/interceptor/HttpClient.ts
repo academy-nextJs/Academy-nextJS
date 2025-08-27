@@ -1,4 +1,4 @@
-import { getServerCookie } from "@/utils/helper/cookie/server-cookie";
+import { getClientCookie } from "@/utils/helper/cookie/client-cookie";
 import axios, { AxiosResponse, AxiosError } from "axios";
 
 export const baseURL = process.env.NEXT_PUBLIC_API_URL;
@@ -26,7 +26,7 @@ instance.interceptors.response.use(onSuccess, onError);
 
 instance.interceptors.request.use(
   async (config) => {
-    const token = await getServerCookie("serverAccessToken");
+    const token = await getClientCookie("clientAccessToken");
     if (token != null) {
       config.headers.Authorization = `Bearer ${token}`;
     }
