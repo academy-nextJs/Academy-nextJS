@@ -25,8 +25,10 @@ const FileContainer: FC<ShapeProps> = ({
       style={{
         width: width,
         height: height,
-        borderRadius: RadiusSize?.[radius],
+        borderTopLeftRadius: RadiusSize?.[radius],
         borderTopRightRadius: "0px",
+        borderBottomLeftRadius: RadiusSize?.[radius],
+        borderBottomRightRadius: RadiusSize?.[radius],
         backgroundColor: background,
         marginTop: labelHeight,
       }}

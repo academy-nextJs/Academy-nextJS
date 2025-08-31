@@ -18,7 +18,7 @@ const Tag: FC<
   return (
     <div
       className={cn(
-        "absolute !left-0 h-fit flex justify-end items-start",
+        "absolute !left-0 h-fit flex justify-start items-start",
         classNames?.wrapperTag
       )}
       style={TagStyle}

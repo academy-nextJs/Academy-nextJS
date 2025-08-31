@@ -11,7 +11,7 @@ export default function WrapperLinks({ color }: { color: string }) {
   return (
     <div
       dir="rtl"
-      className="p-[48px] pb-6 min-h-[496px] rounded-[56px] col-span-2 relative text-white"
+      className="p-[48px] pb-6 min-h-[496px] rounded-[56px] col-span-full relative text-white"
       style={{ backgroundColor: color }}
     >
       <h1 className="text-[32px] font-Peyda-500 max-xl:hidden">پلتفرم دلتا</h1>
@@ -52,7 +52,7 @@ export default function WrapperLinks({ color }: { color: string }) {
         <p className="font-Peyda-400 w-full max-sm:text-center">
           تمام حقوق مادی و معنوی این اثر برای دلتا محفوظ است .
         </p>
-        <ul className="flex gap-x-4 max-sm:w-full justify-center">
+        <div className="flex gap-x-4 max-sm:w-full justify-center">
           {SocialNetworks.map((social, index) => (
             <CreateIconList
               height={36}
@@ -64,7 +64,7 @@ export default function WrapperLinks({ color }: { color: string }) {
               key={index}
             />
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

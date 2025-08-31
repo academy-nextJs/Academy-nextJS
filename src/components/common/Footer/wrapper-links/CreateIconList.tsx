@@ -1,22 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
-import { IconType } from "react-icons";
-
-enum ICON_SIZE {
-  "md" = "w-10 h-10",
-  "lg" = "w-[56px] h-[56px]",
-}
-
-interface CreateIconListProps {
-  width: number;
-  height: number;
-  picture?: string;
-  size: "md" | "lg";
-  href: string;
-  Icon?: IconType;
-  type: "icon" | "picture";
-}
+import { CreateIconListProps, ICON_SIZE } from "./types";
+import { cn } from "@/utils/cn";
 
 const CreateIconList: FC<CreateIconListProps> = ({
   width,
@@ -30,8 +16,10 @@ const CreateIconList: FC<CreateIconListProps> = ({
   return (
     <Link
       href={href}
-      className={`${ICON_SIZE?.[size]} first:bg-white first:text-black
-         rounded-2xl border-1 border-white flex items-center justify-center`}
+      className={cn(
+        "first:bg-white first:text-black rounded-2xl border-1 border-white flex items-center justify-center",
+        ICON_SIZE?.[size]
+      )}
     >
       {type == "picture" ? (
         <Image

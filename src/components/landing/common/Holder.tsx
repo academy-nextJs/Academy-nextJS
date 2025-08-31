@@ -1,3 +1,4 @@
+import { cn } from "@/utils/cn";
 import { FC, ReactNode } from "react";
 
 interface HolderProps {
@@ -15,7 +16,10 @@ const Holder: FC<HolderProps> = ({
 }) => {
   return (
     <div
-      className={`w-full overflow-hidden relative rounded-b-[64px] shadow-[0px_12px_32px_rgba(0, 0, 0, 0.06)] ${className}`}
+      className={cn(
+        "w-full overflow-hidden relative rounded-b-[64px] shadow-[0px_12px_32px_rgba(0, 0, 0, 0.06)]",
+        className
+      )}
       style={{ height: height, backgroundColor: background }}
     >
       {children}

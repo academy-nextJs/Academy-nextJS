@@ -8,11 +8,9 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <ReactQueryProvider>
       <HeroUIProvider>
-        <main>
-          {/* <Navbar/> */}
-          {children}
-          <Footer />
-        </main>
+        {/* <Navbar/> */}
+        {children}
+        <Footer />
       </HeroUIProvider>
     </ReactQueryProvider>
   );

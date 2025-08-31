@@ -1,22 +1,20 @@
 import Link from "next/link";
 import { FC } from "react";
-
-interface CreateLinksProps {
-  title: string;
-  links: Array<{ name: string; href: string }>;
-  isLink?: boolean;
-}
+import { CreateLinksProps } from "./types";
 
 const CreateLinks: FC<CreateLinksProps> = ({ title, links, isLink = true }) => {
-  
+  // create as a link
   const CreateAsLink = links.map((link, index: number) => (
     <Link key={index} href={link.href} className="hover:text-white">
       {link.name}
     </Link>
   ));
 
+  // create as a span
   const CreateAsSpan = links.map((link, index: number) => (
-    <span key={index} className="max-sm:text-center">{link.name}</span>
+    <span key={index} className="max-sm:text-center">
+      {link.name}
+    </span>
   ));
 
   return (

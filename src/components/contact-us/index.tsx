@@ -2,7 +2,7 @@ import { ContactUsWays } from "@/core/constants/ContactUs";
 import Breadcrumb, { BreadcrumbItem } from "../common/BreadCrumb";
 import TitleSection from "../common/title-text/TitleSection";
 import ContactUsWaysItem from "./ContactUsWays";
-import Form from "../common/Footer/Form";
+import Form from "../common/Footer/wrapper-form/Form";
 
 const ContactUsWrapper = () => {
   // BreadCrumb

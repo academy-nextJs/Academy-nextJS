@@ -3,10 +3,7 @@ import { TriangleIcon } from "@/core/icon/icons";
 
 export default function WrapperForm() {
   return (
-    <div
-      dir="rtl"
-      className="font-Peyda-500 max-lg:col-span-2 max-lg:flex flex-wrap justify-center mb-12"
-    >
+    <div className="font-Peyda-500 max-lg:col-span-2 max-lg:flex flex-wrap justify-center mb-12">
       <div className="flex gap-x-4">
         <h5 className="max-lg:w-full max-lg:text-center">همیشه کنارتیم</h5>
         <TriangleIcon width={48} height={16} fill="#363636" />
